@@ -1,12 +1,16 @@
-<php?
+<?php
 include ('top.php');
 ?>
+
 <article id="main">
     <h1></h1>
-    <p>Everyday thousands of lives are affected by gun . Children are accientally killed by parents, troubled teenagers get ahold of family firearms and take their own lives, and men and women with hate in their hearts walk into movie theatres and massacre individuals 
-    they have never met.</p>
+    <p>Everyday thousands of lives are affected by gun . Children are accientally killed by parents, 
+        troubled teenagers get ahold of family firearms and take their own lives, and men and women with hate in their hearts 
+        walk into movie theatres and massacre individuals they have never met.</p>
 </article>
-http://www.hollywoodreporter.com/news/las-vegas-shooting-survivor-shares-story-one-week-1046856
+
+<!-- http://www.hollywoodreporter.com/news/las-vegas-shooting-survivor-shares-story-one-week-1046856 -->
+
 <?php
 include ('footer.php');
 ?>
