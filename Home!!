@@ -1,0 +1,4 @@
+# home
+<?php
+include ('top.php');
+?>
