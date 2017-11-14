@@ -10,7 +10,7 @@ $path_parts = pathinfo($phpSelf);
     <title>Amend the Second</title>
     
     <meta charset="utf-8">
-    <meta name="author" content="Mary Woolley & Echo Norcott
+    <meta name="author" content="Mary Woolley & Echo Norcott">
     <meta name="description" content="Learn about gun violence and the toll it takes on our country.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -61,6 +61,6 @@ $path_parts = pathinfo($phpSelf);
   include 'nav.php';
   
   if ($debug) {
-    print '<p>DEBUG MODE IS ON</p>;
+    print '<p>DEBUG MODE IS ON</p>';
   }
   ?>
