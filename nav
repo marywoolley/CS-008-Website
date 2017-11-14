@@ -1,0 +1,13 @@
+# navigation page
+<nav>
+  <ol>
+    <?php
+    print 'li class="';
+    if ($path_parts['filename'] == "home") {
+      print' activePage '
+    }
+    print '">';
+    print '<a href="home.php">Home</a>';
+    print '</li>;
+    
+    
