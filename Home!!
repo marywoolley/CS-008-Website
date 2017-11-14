@@ -12,4 +12,9 @@ include ('top.php');
   <p>The Supreme Court ruled in 2008 that the Second Amendment protected the rights of citizens to own firearms not in connection to any sort of militia.</p>
 </article>
 
-<! -- https://www.law.cornell.edu/constitution/second_amendment -->
+<!-- https://www.law.cornell.edu/constitution/second_amendment -->
+
+<?php
+include ('footer.php');
+?>
+
