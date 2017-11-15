@@ -26,7 +26,6 @@
         print '">';
         print '<a href="home.php">Home</a>';
         print '</li>'; */
-        
         ?>
     </ol>
 </nav>
