@@ -1,4 +1,5 @@
 <!-- FOOTER !! -->
 <footer>
+    include ('nav.php')
     <p>by echo norcott and mary woolley</p>
 </footer>
