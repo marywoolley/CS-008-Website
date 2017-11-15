@@ -7,8 +7,10 @@ include ('top.php');
 <!-- insert picture -->
 
 <article>
+  <p>“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
+  <p>-Elizabeth Warren</p>
   <h1>Amendment II:</h1>
-  <p>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</p>
+  <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
   <p>The Supreme Court ruled in 2008 that the Second Amendment protected the rights of citizens to own firearms not in connection to any sort of militia.</p>
 </article>
 
