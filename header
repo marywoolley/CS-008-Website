@@ -1,5 +1,7 @@
 <!-- HEADER -->
 <header>
-    <!-- logo !! -->
+    <figure>
+        <img alt="Amend the Second Logo" class="roundedCornersSmall midSize transparent" src="images/logo.ai">
+    </figure>
     <h1>AMEND THE SECOND</h1>
 </header>
