@@ -1,0 +1,22 @@
+<?php
+include ('top.php')
+?>
+<article>
+  <h1>History</h2>
+  <p>In the 1750s guns are becoming more common place. Pistols are produced more easily and are beginning to replace swords in day to day life and in duels.</p>
+  
+  <p>In 1791 the Second Amendment is ratified</p>
+  <p>The precussion cap replaces flicklock ignition in 1807. These make it less likely for a gun to misfire and would work in any weather.</p>
+  <p>The precussion cap would not be used by the US military until 1833.</p>
+  <p>In 1835 the first Colt revolver is invented. This is the first revolving, multi-shot
+  <p>The Supreme Court ruled in 2008 that the Second Amendment protected the rights of citizens to own firearms not in connection to any sort of militia.</p>
+  
+</article>
+<?php
+include ('footer.php')
+?>
+
+
+
+// http://www.pbs.org/opb/historydetectives/technique/gun-timeline/
+// https://www.npr.org/templates/story/story.php?storyId=91942478
