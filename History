@@ -8,9 +8,13 @@ include ('top.php')
   <p>In 1791 the Second Amendment is ratified</p>
   <p>The precussion cap replaces flicklock ignition in 1807. These make it less likely for a gun to misfire and would work in any weather.</p>
   <p>The precussion cap would not be used by the US military until 1833.</p>
-  <p>In 1835 the first Colt revolver is invented. This is the first revolving, multi-shot
-  <p>The Supreme Court ruled in 2008 that the Second Amendment protected the rights of citizens to own firearms not in connection to any sort of militia.</p>
+  <pThe Industrial Age starts and in 1835 the Colt revolver is invented and mass produced. This is the first revolving, multi-shot gun.
+  <p>Pin-fire cartridges become common place in 1840. They made it easy to check if the gun was loaded or not.</p>
+  <p>In 1859 rim-fire cartridges come into use. They are cheap, and make guns more powerful. Soon after, in 1960, the Spencer Repeating Rifle is shown to the government but is shot down until 1963, stating that it was a waste of ammunition. In 1961 Breech guns are common, loading in the back of the gun as opposed to the muzzle.</p>
+  <p>1962 is when the Gatling gun appears, </p>
   
+  <p>The Supreme Court ruled in 2008 that the Second Amendment protected the rights of citizens to own firearms not in connection to any sort of militia.</p>
+
 </article>
 <?php
 include ('footer.php')
