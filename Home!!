@@ -11,7 +11,6 @@ include ('top.php');
   <p>-Elizabeth Warren</p>
   <h1>Amendment II:</h1>
   <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
-  <p>The Supreme Court ruled in 2008 that the Second Amendment protected the rights of citizens to own firearms not in connection to any sort of militia.</p>
 </article>
 
 <!-- https://www.law.cornell.edu/constitution/second_amendment -->
