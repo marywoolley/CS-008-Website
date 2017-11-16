@@ -1,1 +1,55 @@
+/* ----- ** GENERAL ** ----- */
+body {
+    font: 14pt Arial,Helvetica,sans-serif;
+    margin: auto;
+    width: 90%;
+}
+p {
+    text-indent: 3em;
+}
+.fiftyPercent{
+    width: 50%;
+    text-align: center;
+    padding: 1em;
+    margin: auto;
+}
+.roundedCornersSmall{
+    border-radius: 0.4em;
+}
+
+/* ----- ** NAVIGATION ** ----- */
+nav {
+    background-color: rgb(43, 89, 97);
+    text-align: center;
+    padding: 0.3em;
+    color: rgb(240, 250, 255);
+}
+nav ol {
+    padding-left: 0;
+}
+nav ol li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 3em;
+    text-align: center;
+}
+nav a {
+    color: rgb(240, 250, 255);
+    text-decoration: none;
+}
+nav .activePage {
+    background-color:rgb(215, 232, 236);
+    color: rgb(43, 89, 97); /* ** change text color so that its visible on lighter background - not working? */
+}
+footer nav {
+   background-color: rgb(43, 89, 97);
+   opacity: 0.75;
+}
+
+/* ----- ** HOME PAGE ** ----- */
+p[class="quote"]{
+    font-style: italic;
+}
+
+
 
