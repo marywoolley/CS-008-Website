@@ -19,13 +19,13 @@
         print '<a href="personal.php">Personal Stories</a>';
         print '</li>';
         
-        /* print '<li class="';
-        if ($path_parts['filename'] == "home") {
+        print '<li class="';
+        if ($path_parts['filename'] == "history") {
             print 'activePage';
         }
         print '">';
-        print '<a href="home.php">Home</a>';
-        print '</li>'; */
+        print '<a href="history.php">History</a>';
+        print '</li>';
         ?>
     </ol>
 </nav>
