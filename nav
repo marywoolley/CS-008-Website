@@ -16,7 +16,7 @@
             print 'activePage';
         }
         print '">';
-        print '<a href="statistics.php">Statistics</a>';
+        print '<a href="stats.php">Statistics</a>';
         print '</li>';
         
         print '<li class="';
@@ -33,6 +33,22 @@
         }
         print '">';
         print '<a href="personal.php">Personal Stories</a>';
+        print '</li>';
+        
+        print '<li class="';
+        if ($path_parts['filename'] == "contact") {
+            print 'activePage';
+        }
+        print '">';
+        print '<a href="contact.php">Contact Us</a>';
+        print '</li>';
+        
+        print '<li class="';
+        if ($path_parts['filename'] == "donate") {
+            print 'activePage';
+        }
+        print '">';
+        print '<a href="donate.php">Donate</a>';
         print '</li>';
         ?>
     </ol>
