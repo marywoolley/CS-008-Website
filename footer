@@ -3,5 +3,6 @@
     <?php
     include ('nav.php')
     ?>
-    <p>by echo norcott and mary woolley</p>
+    <p>by Echo Norcott and Mary Woolley</p>
+    <p>Dedicated to the victims of the Las Vegas shooting.</p>
 </footer>
