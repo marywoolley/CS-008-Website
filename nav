@@ -12,11 +12,11 @@
         print '</li>';
         
         print '<li class="';
-        if ($path_parts['filename'] == "personal") {
+        if ($path_parts['filename'] == "statistics") {
             print 'activePage';
         }
         print '">';
-        print '<a href="personal.php">Personal Stories</a>';
+        print '<a href="statistics.php">Statistics</a>';
         print '</li>';
         
         print '<li class="';
@@ -25,6 +25,14 @@
         }
         print '">';
         print '<a href="history.php">History</a>';
+        print '</li>';
+        
+        print '<li class="';
+        if ($path_parts['filename'] == "personal") {
+            print 'activePage';
+        }
+        print '">';
+        print '<a href="personal.php">Personal Stories</a>';
         print '</li>';
         ?>
     </ol>
