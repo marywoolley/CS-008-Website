@@ -51,5 +51,8 @@ p[class="quote"]{
     font-style: italic;
 }
 
-
+/* ----- ** FOOTER ** ----- */
+footer p {
+    text-align: center;
+}
 
