@@ -50,7 +50,12 @@ footer nav {
 p[class="quote"]{
     font-style: italic;
 }
-
+.center {
+    float: center;
+}
+.mid {
+    width: 300px;
+}
 /* ----- ** FOOTER ** ----- */
 footer p {
     text-align: center;
