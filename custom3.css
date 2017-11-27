@@ -16,6 +16,9 @@ p {
 .roundedCornersSmall{
     border-radius: 0.4em;
 }
+img{
+    max-width: 100%
+}
 
 /* ----- ** NAVIGATION ** ----- */
 nav {
@@ -50,14 +53,15 @@ footer nav {
 p[class="quote"]{
     font-style: italic;
 }
-.center {
-    float: center;
-}
-.mid {
-    width: 300px;
+.midSize {
+    width: 70%;
 }
 /* ----- ** FOOTER ** ----- */
 footer p {
+    text-align: center;
+}
+/* ----- ** HEADER ** ----- */
+header h1{
     text-align: center;
 }
 
