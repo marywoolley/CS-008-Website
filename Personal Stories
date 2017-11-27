@@ -10,7 +10,8 @@ include ('top.php');
 </article>
 
 <!-- http://www.hollywoodreporter.com/news/las-vegas-shooting-survivor-shares-story-one-week-1046856 -->
-
+<!-- https://www.bradycampaign.org/gun-violence/victim-stories/markie-3 -->
+<!-- http://www.cnn.com/2013/04/13/opinion/paugh-guns-suicide-irpt/index.html -->
 <?php
 include ('footer.php');
 ?>
