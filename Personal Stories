@@ -7,9 +7,11 @@ include ('top.php');
     <p>Everyday thousands of lives are affected by guns. Children are accientally killed by parents, 
         troubled teenagers get ahold of family firearms and take their own lives, and men and women with hate in their hearts 
         walk into movie theatres and massacre individuals they have never met.</p>
+    <h2>References</h2>
+    <p>Schoellkopf, Christina. “One Week After Las Vegas Shooting, Festivalgoer Opens Up About Survivor's Guilt.” The Hollywood Reporter, 9 Oct. 2017, www.hollywoodreporter.com/news/las-vegas-shooting-survivor-shares-story-one-week-1046856.</p>
+    <p>“Brady Campaign to Prevent Gun Violence.” Brady Campaign to Prevent Gun Violence, www.bradycampaign.org/gun-violence/victim-stories/markie-3.</p>
 </article>
 
-<!-- http://www.hollywoodreporter.com/news/las-vegas-shooting-survivor-shares-story-one-week-1046856 -->
 <!-- https://www.bradycampaign.org/gun-violence/victim-stories/markie-3 -->
 <!-- http://www.cnn.com/2013/04/13/opinion/paugh-guns-suicide-irpt/index.html -->
 <?php
