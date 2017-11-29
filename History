@@ -2,13 +2,13 @@
 include ('top.php')
 ?>
 <article>
-  <h1>History</h2>
+  <h2>History</h2>
   <p>In the 1750s guns are becoming more common place. Pistols are produced more easily and are beginning to replace swords in day to day life and in duels.</p>
   <p>In 1791 the Second Amendment is ratified</p>
   <p>The precussion cap replaces flicklock ignition in 1807. These make it less likely for a gun to misfire and would work 
   in any weather.</p>
   <p>The precussion cap would not be used by the US military until 1833.</p>
-  <pThe Industrial Age starts and in 1835 the Colt revolver is invented and mass produced. This is the first revolving, 
+  <p>The Industrial Age starts and in 1835 the Colt revolver is invented and mass produced. This is the first revolving, 
   multi-shot gun.</p>
   <p>Pin-fire cartridges become common place in 1840. They made it easy to check if the gun was loaded or not.</p>
   <p>In 1859 rim-fire cartridges come into use. They are cheap, and make guns more powerful. Soon after, in 1960, the 
