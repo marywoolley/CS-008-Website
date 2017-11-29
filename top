@@ -14,7 +14,7 @@ $path_parts = pathinfo($phpSelf);
     <meta name="description" content="Learn about gun violence and the toll it takes on our country.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    link rel="stylesheet" href="../css/custom3.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/custom3.css" type="text/css" media="screen">
     
     <?php
     $debug = false;
@@ -56,7 +56,7 @@ $path_parts = pathinfo($phpSelf);
   // ############################# Body ###################################
   
   <?php
-  print 'body id="' . $path_parts['filename'] . '">';
+  print '<body id="' . $path_parts['filename'] . '">';
   
   include 'header.php';
   include 'nav.php';
