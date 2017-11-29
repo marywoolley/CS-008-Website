@@ -6,7 +6,8 @@ include ('top.php');
 <title>Home</title>
 <!-- insert picture -->
 <figure class="center mid">
-  <img alt="" src="flowerpower.png"
+  <img alt="" src="flowerpower.png">
+  <figcaption>The Flower Power movement, protesting the Vietnam War.</figcaption>
 </figure>
 <article>
   <p class="quote">“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
