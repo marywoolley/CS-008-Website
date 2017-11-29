@@ -19,7 +19,9 @@ p {
 img{
     max-width: 100%
 }
-
+h2 {
+    font: 16pt;
+}
 /* ----- ** NAVIGATION ** ----- */
 nav {
     background-color: rgb(43, 89, 97);
