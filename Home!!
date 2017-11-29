@@ -6,12 +6,13 @@ include ('top.php');
 <title>Home</title>
 <!-- insert picture -->
 <article>
-  <p class="quote">“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
-  <p>-Elizabeth Warren</p>
+  <h1> The Las Vegas shooting: 58 dead, 500 injured, 15 minutes. </h1>
   <figure class="center mid">
     <img alt="" src="flowerpower.png">
     <figcaption>The Flower Power movement, protesting the Vietnam War.</figcaption>
   </figure>
+  <p class="quote">“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
+  <p>-Elizabeth Warren</p>
   <p>"The regularity of mass killings breeds familiarity. The rhythms of grief and outrage that accompany them become—for 
   those not directly affected by tragedy—ritualised and then blend into the background noise. That normalisation makes it 
   ever less likely that America's political system will groan into action to take steps to reduce their frequency or 
@@ -19,8 +20,10 @@ include ('top.php');
   <h1>Amendment II:</h1>
   <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
 
-  <p>References</p>
+  <h2>References</h2>
+  <p>“Las Vegas Shooting: What We Know.” CNN, Cable News Network, 3 Oct. 2017, www.cnn.com/2017/10/02/us/las-vegas-shooting-what-we-know/index.html.</p>
   <p>Staff, LII. “Second Amendment.” LII / Legal Information Institute, 5 Feb. 2010, www.law.cornell.edu/constitution/second_amendment.</p>
+  <p>“The Latest American Mass Killing.” The Economist, The Economist Newspaper, 18 June 2015, www.economist.com/blogs/democracyinamerica/2015/06/charleston-massacre.</p>
 </article>
 
 <?php
