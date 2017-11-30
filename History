@@ -2,7 +2,7 @@
 include ('top.php')
 ?>
 <article>
-  <h2>History</h2>
+  <h1>History</h1>
   <p>In the 1750s guns are becoming more common place. Pistols are produced more easily and are beginning to replace swords in day to day life and in duels.</p>
   <p>In 1791 the Second Amendment is ratified</p>
   <p>The precussion cap replaces flicklock ignition in 1807. These make it less likely for a gun to misfire and would work 
