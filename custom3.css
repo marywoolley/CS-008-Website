@@ -58,6 +58,10 @@ p[class="quote"]{
 .midSize {
     width: 70%;
 }
+figcaption {
+    font-style: italic;
+    text-align: center;
+}
 /* ----- ** FOOTER ** ----- */
 footer p {
     text-align: center;
@@ -66,4 +70,7 @@ footer p {
 header h1{
     text-align: center;
 }
-
+/* ----- ** HISTORY PAGE ** ----- */
+history h1{
+    font-size: 18pt;
+}
