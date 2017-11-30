@@ -3,16 +3,17 @@ include ('top.php')
 ?>
 
 <title>Contact Us</title>
-
-<h1>Authors:</h1>
-<h2>Echo Norcott</h2>
-<p></p>
-<p>Email me at</p>
-<h2>Mary Woolley</h2>
-<p>I from a family with very mixed feelings about gun control. I grew up listening to my father's family insist that it is a 
-basic human right to bare arms. They would become enraged when the news, reporting on some tragedy, brought up strengthening 
-gun control. I did not agree with them, but I did not form my own opionion until the shooting at Sandy Hook in 2012. I live 
-just over an hour from Sandy Hook, and had been there many times. Unfortunately it took striking a chord close to home to 
-make me realized the real devistation of gun violence. Today, I strongly advocate enforcing stricter gun control despite 
-our second amendment.</p>
-<p>Email me at woolleymary1@gmail.com</p>
+ <article>
+  <h1>Authors:</h1>
+  <h2>Echo Norcott</h2>
+  <p></p>
+  <p>Email me at</p>
+  <h2>Mary Woolley</h2>
+  <p>I from a family with very mixed feelings about gun control. I grew up listening to my father's family insist that it is a 
+  basic human right to bare arms. They would become enraged when the news, reporting on some tragedy, brought up strengthening 
+  gun control. I did not agree with them, but I did not form my own opionion until the shooting at Sandy Hook in 2012. I live 
+  just over an hour from Sandy Hook, and had been there many times. Unfortunately it took striking a chord close to home to 
+  make me realized the real devistation of gun violence. Today, I strongly advocate enforcing stricter gun control despite 
+  our second amendment.</p>
+  <p>Email me at woolleymary1@gmail.com</p>
+</article>
