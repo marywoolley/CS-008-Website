@@ -4,6 +4,7 @@ include ('top.php')
 
 <title>Contact Us</title>
  <article>
+ <h1>Contact Us</h1>
   <h1>Authors:</h1>
   <h2>Echo Norcott</h2>
   <p></p>
