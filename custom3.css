@@ -4,6 +4,11 @@ body {
     margin: auto;
     width: 90%;
 }
+article {
+    width: 75%;
+    align-content: center;
+    margin: auto;
+}
 p {
     text-indent: 3em;
 }
@@ -16,8 +21,15 @@ p {
 .roundedCornersSmall{
     border-radius: 0.4em;
 }
-.midSize {
+.midSizeRight {
     width: 45%;
+    float: right;
+    margin-left: 6px;
+}
+.midSizeLeft {
+    width: 45%;
+    float: left;
+    margin-right: 6px;
 }
 img{
     max-width: 100%
