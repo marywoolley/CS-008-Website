@@ -68,30 +68,14 @@ footer p {
 }
 /* ----- ** HEADER ** ----- */
 header img {
-    float: left;
     width: 60%;
     padding: 0em;
-}
-
-header h1{
-    text-align: center;
-    float: left;
-    font-size: 75px;
-    margin: 0.1em 1em 0em 0em;
-    letter-spacing: 0.2em;
-}
-
-header h2 {
-    text-align: center;
-    float: left;
-    margin: 0em auto;
-    font-size: 50px;
-    padding-left: 0.05em;
+    align-content: center;
 }
 
 header {
-    padding: 2.5em 8em 8em 8em;
-    padding-bottom: 12em;
+    padding: 3em 8em 8em 8em;
+    padding-bottom: 3em;
     margin: auto;
     min-width: 50%;
 }
