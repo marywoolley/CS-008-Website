@@ -82,6 +82,7 @@ include 'top.php';
                     <option value="WI">WI</option>
                     <option value="WY">WY</option>
                 </select>
+            </p>
             <!-- drop box for state? -->
             
             <p>ZIP Code:
