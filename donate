@@ -94,6 +94,21 @@ include 'top.php';
             </p>
             
         </fieldset>
+        <!--Checkboxes--!>
+        <fieldset id='quickInfo'>
+            <legend>A Quick Survey</legend>
+            <p>Please select the following that apply to your experience:</p>
+            <br />
+            <input type="checkbox" name="experience" value="Own one gun" checked="checked" />Own one gun
+            <input type="checkbox" name="experience" value="Own multiple guns" /> Own multiple guns
+            <input type="checkbox" name="experience" value="Family member owns a gun" /> Family member owns a gun
+            <input type="checkbox" name="experience" value="Close friend owns a gun" /> Close friend owns a gun
+            <input type="checkbox" name="experience" value="Have had training with guns" /> Have had training with guns
+            <input type="checkbox" name="experience" value="Am/Was a member of the military" /> Am/Was a member of the military
+            <input type="checkbox" name="experience" value="Have expierienced gun violence" /> Have experienced gun violence
+            <input type="checkbox" name="experience" value="Family member has experienced gun violence" /> Family member has experienced gun violence
+            <input type="checkbox" name="experience" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence
+        </fieldset>
 
         <fieldset id="paymentInfo">
             <legend>Payment Information</legend>
