@@ -7,6 +7,9 @@ include 'top.php';
     <p>All proceeds will go to the Vas Vegas Victim's Fund. The money you donate will help pay for the medical bills of the 
     victims of the awful Las Vegas Shooting that happened on October 1, 2017. View more information at 
     <a href="https://lasvegasvictimsfund.org/">lasvegasvictimsfund.org</a>. Thank you for your contribution</p>
+    <figure>
+        <img alt="bent gun barrel" class="roundedCornersSmall midSize" src="images/twistedgun.png" align="right"/>
+    </figure>
     <form action="<?php print $phpSelf ?>"
           method="post"
           id="donate_form">
@@ -99,17 +102,18 @@ include 'top.php';
             <legend>A Quick Survey</legend>
             <p>Please select the following that apply to your experience:</p>
             <br />
-            <input type="checkbox" name="experience" value="Own one gun" checked="checked" />Own one gun
-            <input type="checkbox" name="experience" value="Own multiple guns" /> Own multiple guns
-            <input type="checkbox" name="experience" value="Family member owns a gun" /> Family member owns a gun
-            <input type="checkbox" name="experience" value="Close friend owns a gun" /> Close friend owns a gun
-            <input type="checkbox" name="experience" value="Have had training with guns" /> Have had training with guns
-            <input type="checkbox" name="experience" value="Am/Was a member of the military" /> Am/Was a member of the military
-            <input type="checkbox" name="experience" value="Have expierienced gun violence" /> Have experienced gun violence
-            <input type="checkbox" name="experience" value="Family member has experienced gun violence" /> Family member has experienced gun violence
-            <input type="checkbox" name="experience" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence
+            <input type="checkbox" name="experience" value="Do not own a gun" checked="checked" />Do not own a gun <br />
+            <input type="checkbox" name="experience" value="Own one gun" />Own one gun <br />
+            <input type="checkbox" name="experience" value="Own multiple guns" /> Own multiple guns <br />
+            <input type="checkbox" name="experience" value="Family member owns a gun" /> Family member owns a gun <br />
+            <input type="checkbox" name="experience" value="Close friend owns a gun" /> Close friend owns a gun <br />
+            <input type="checkbox" name="experience" value="Have had training with guns" /> Have had training with guns <br />
+            <input type="checkbox" name="experience" value="Am/Was a member of the military" /> Am/Was a member of the military <br />
+            <input type="checkbox" name="experience" value="Have expierienced gun violence" /> Have experienced gun violence <br />
+            <input type="checkbox" name="experience" value="Family member has experienced gun violence" /> Family member has experienced gun violence <br />
+            <input type="checkbox" name="experience" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence <br />
         </fieldset>
-
+        
         <fieldset id="paymentInfo">
             <legend>Payment Information</legend>
             
