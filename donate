@@ -3,8 +3,8 @@ include 'top.php';
 ?>
 
 <article>
-    <h2>Donate</h2>
-    
+    <h1>Donate</h1>
+    <p>All proceeds will go to the Vas Vegas Victim's Fund. The money you donate will help pay for the medical bills of the victims of the awful Las Vegas Shooting that happened on October 1, 2017. View more information at <a href="https://lasvegasvictimsfund.org/">lasvegasvictimsfund.org</a>. Thank you for your contribution</p>
     <form action="<?php print $phpSelf ?>"
           method="post"
           id="donate_form">
