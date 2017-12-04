@@ -16,6 +16,9 @@ p {
 .roundedCornersSmall{
     border-radius: 0.4em;
 }
+.midSize {
+    width: 45%;
+}
 img{
     max-width: 100%
 }
@@ -54,9 +57,6 @@ footer nav {
 /* ----- ** HOME PAGE ** ----- */
 p[class="quote"]{
     font-style: italic;
-}
-.midSize {
-    width: 70%;
 }
 figcaption {
     font-style: italic;
