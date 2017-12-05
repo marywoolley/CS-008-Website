@@ -4,5 +4,5 @@
     include ('nav.php')
     ?>
     <p>by Echo Norcott and Mary Woolley</p>
-    <p>Dedicated to the victims of the Las Vegas shooting.</p>
+    <p>Dedicated to the victims of the Las Vegas shooting</p>
 </footer>
