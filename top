@@ -48,7 +48,11 @@ $path_parts = pathinfo($phpSelf);
         include 'lib/validation-functions.php';
         include 'lib/mail-message.php';
        }
-       
+       if ($path_parts['filename'] == "contact") {
+        print PHP_EOL . '<!-- include contact libraries  -->' . PHP_EOL;
+        include ('lib/validation-functions.php');
+        include ('lib/mail-message.php');
+       }
        print PHP_EOL . '<!-- finished including libraries -->' . PHP_EOL;
        ?>
   </head>
