@@ -1,15 +1,15 @@
 
 <?php
 include ('top.php');
- 
-$comments="";
 
 $thisURL = $domain . $phpSelf;
 
+$comments="";
+
 $commentsERROR= false;
 
-$errorMsg = array();
 $dataRecord = array();
+$errorMsg = array();
 
 if (isset($_POST["btnSubmit"])) {
     if (!securityCheck($thisURL)) {
@@ -24,30 +24,31 @@ if (isset($_POST["btnSubmit"])) {
     if ($comments == "") {
         $errorMsg[] = "Please enter your comment.";
         $commentsERROR = true;
-        }
-    } elseif (!verifyAlphaNum($comments)) {
+    
+    } elseif(!verifyAlphaNum($comments)) {
         $errorMsg[] = "Your comment has characters we cannot recognize";
         $commentsERROR = true;
-    }
-
-    if (!$errorMsg) {
-            if ($debug)
+    } else {
+            if ($debug) {
                 print PHP_EOL . '<p>Form is valid</p>';
-        
+            }
             $myFolder = 'data/';
             
             $myFileName = 'comments';
-    
+
             $fileExt = '.csv';
 
             $filename = $myFolder . $myFileName . $fileExt;
-            if ($debug) print PHP_EOL . '<p>filename is ' . $filename;
+            
+                if ($debug) 
+                    print PHP_EOL . '<p>filename is ' . $filename;
         
-            $file = fopen($filename, 'a');
+                $file = fopen($filename, 'a');
     
-            fputcsv($file, $dataRecord);
+                fputcsv($file, $dataRecord);
     
-            fclose($file);
+                fclose($file);
+        }
     }
 ?>
 
@@ -76,14 +77,13 @@ if (isset($_POST["btnSubmit"])) {
 
         if ($errorMsg) {
             print '<div id="errors">' . PHP_EOL;
-            print '<h2>Your comment has the following issues:</h2>' . PHP_EOL;
-            print '<ol>' . PHP_EOL;
+            print '<ul>' . PHP_EOL;
             
             foreach ($errorMsg as $err) {
                 print '<li>' . $err . '</li>' . PHP_EOL;
             }
             
-            print '</ol>' . PHP_EOL;
+            print '</ul>' . PHP_EOL;
             print '</div>' . PHP_EOL;
         }
     
@@ -99,8 +99,10 @@ if (isset($_POST["btnSubmit"])) {
             id="txtComments"
             maxlength="140"
             name="txtComments"
+            placeholder="Enter your comments here..."
             onfocus="this.select()"
-            tabindex="200"><?php print $comments;?></textarea>
+            type="text"
+            tabindex="400"><?php print $comments;?></textarea>
     </p>
     <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Comment" >
 </fieldset>
