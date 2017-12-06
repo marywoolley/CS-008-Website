@@ -102,3 +102,14 @@ fieldset {
     padding: 0.2em;
     margin: 1em;
 }
+
+/* ----- ** CONTACT PAGE ** ----- */
+textarea {
+    height: 150px;
+    width: 400px;
+    font: 13pt Arial,Helvetica,sans-serif;
+    padding: 0.3em;
+}
+button {
+    margin: auto;
+}
