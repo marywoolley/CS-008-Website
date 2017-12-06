@@ -80,6 +80,7 @@ footer p {
 }
 footer {
     clear: both;
+    background-color: rgb(43, 89, 97);
 }
 .statsImg {
     padding-bottom: 1em;
