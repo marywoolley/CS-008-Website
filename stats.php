@@ -50,7 +50,7 @@ if($file){
         print'</pre></p>';
     }
 }
-/* --- END READ WEATHER DATA --- */
+/* --- END READ DATA :) --- */
 
 fclose($file);
 
