@@ -78,6 +78,12 @@ figcaption {
 footer p {
     text-align: center;
 }
+footer {
+    clear: both;
+}
+.statsImg {
+    padding-bottom: 1em;
+}
 /* ----- ** HEADER ** ----- */
 header img {
     width: 60%;
