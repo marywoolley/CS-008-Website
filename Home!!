@@ -1,6 +1,139 @@
 <!-- home -->
 <?php
 include ('top.php');
+
+$ownNone = true;
+$ownOne = false;
+$ownMultiple = false;
+$famOwns = false;
+$closeFriendOwns = false;
+$gunTraining = false;
+$militaryMember = false;
+$experiencedGunViolence = false;
+$famExperienced = false;
+$closeFriendExperienced = false;
+
+$experienceERROR = false;
+$totalChecked = 0;
+
+if(isset($_POST["btnSubmit"])){
+
+    if(isset($_POST["ownNone"])){
+        $ownNone = true;
+        $totalChecked++;
+    }else{
+        $ownNone = false;
+    }
+    $dataRecord[] = $ownNone;
+    
+    if(isset($_POST["ownOne"])){
+        $ownOne = true;
+        $totalChecked++;
+    }else{
+        $ownOne = false;
+    }
+    $dataRecord[] = $ownOne;
+    
+    if(isset($_POST["ownMultiple"])){
+        $ownMultiple = true;
+        $totalChecked++;
+    }else{
+        $ownMultiple = false;
+    }
+    $dataRecord[] = $ownMultiple;
+    
+    if(isset($_POST["famOwns"])){
+        $famOwns = true;
+        $totalChecked++;
+    }else{
+        $famOwns = false;
+    }
+    $dataRecord[] = $famOwns;
+    
+    if(isset($_POST["closeFriendOwns"])){
+        $closeFriendOwns = true;
+        $totalChecked++;
+    }else{
+        $closeFriendOwns = false;
+    }
+    $dataRecord[] = $closeFriendOwns;
+    
+    if(isset($_POST["gunTraining"])){
+        $gunTraining = true;
+        $totalChecked++;
+    }else{
+        $gunTraining = false;
+    }
+    $dataRecord[] = $gunTraining;
+    
+    if(isset($_POST["militaryMember"])){
+        $militaryMember = true;
+        $totalChecked++;
+    }else{
+        $militaryMember = false;
+    }
+    $dataRecord[] = $militaryMember;
+    
+    if(isset($_POST["experiencedGunViolence"])){
+        $experiencedGunViolence = true;
+        $totalChecked++;
+    }else{
+        $experiencedGunViolence = false;
+    }
+    $dataRecord[] = $experiencedGunViolence;
+    
+    if(isset($_POST["famExperienced"])){
+        $famExperienced = true;
+        $totalChecked++;
+    }else{
+        $famExperienced = false;
+    }
+    $dataRecord[] = $famExperienced;
+    
+    if(isset($_POST["closeFriendExperienced"])){
+        $closeFriendExperienced = true;
+        $totalChecked++;
+    }else{
+        $closeFriendExperienced = false;
+    }
+    $dataRecord[] = $closeFriendExperienced;
+    
+    if($totalChecked < 1){
+        $errorMsg[] = "Please choose at least one option";
+        $activityERROR = true;
+    }
+    
+    if(isset($_POST[""])){
+    
+        if(!$errorMsg){
+            if($debug){
+                print PHP_EOL . '<p>Form is valid</p>';
+            }
+        }else{
+            if($debug){
+                print PHP_EOL . '<p>Form is invalid</p>';
+            }   
+        }
+    
+        $myFolder = 'data/';
+    
+        $myFileName = 'survey_results';
+
+        $fileExt = '.csv';
+    
+        $filename = $myFolder . $myFileName . $fileExt;
+    
+        if($debug){
+            print PHP_EOL . '<p>filename is ' . $filename;
+        }
+    
+        $file = fopen($filename, 'a');
+    
+        fputcsv($file, $dataRecord);
+        
+        fclose($file);
+    }
+}
 ?>
 
 <title>Home</title>
@@ -26,6 +159,24 @@ include ('top.php');
   <h1>Amendment II:</h1>
   <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
 
+  <fieldset id='quickInfo'>
+        <legend>A Quick Survey</legend>
+        <p>Please select the following that apply to your experience:</p>
+        <br />
+        <input type="checkbox" name="ownNone" value="Do not own a gun" checked="checked" />Do not own a gun <br />
+        <input type="checkbox" name="ownOne" value="Own one gun" />Own one gun <br />
+        <input type="checkbox" name="ownMultiple" value="Own multiple guns" /> Own multiple guns <br />
+        <input type="checkbox" name="famOwns" value="Family member owns a gun" /> Family member owns a gun <br />
+        <input type="checkbox" name="closeFriendOwns" value="Close friend owns a gun" /> Close friend owns a gun <br />
+        <input type="checkbox" name="gunTraining" value="Have had training with guns" /> Have had training with guns <br />
+        <input type="checkbox" name="militaryMember" value="Am/Was a member of the military" /> Am/Was a member of the military <br />
+        <input type="checkbox" name="experiencedGunViolence" value="Have expierienced gun violence" /> Have experienced gun violence <br />
+        <input type="checkbox" name="famExperienced" value="Family member has experienced gun violence" /> Family member has experienced gun violence <br />
+        <input type="checkbox" name="closeFriendExperienced" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence <br />
+        
+        <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Submit" >   
+  </fieldset>
+  
   <h2>References</h2>
   <p>“Las Vegas Shooting: What We Know.” CNN, Cable News Network, 3 Oct. 2017, www.cnn.com/2017/10/02/us/las-vegas-shooting-what-we-know/index.html.</p>
   <p>“Second Amendment.” LII / Legal Information Institute, 5 Feb. 2010, www.law.cornell.edu/constitution/second_amendment.</p>
