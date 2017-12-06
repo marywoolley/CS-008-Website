@@ -56,6 +56,10 @@ fclose($file);
 
 include 'top.php';
 ?>
+<article>
+    <h1><img alt="" src="images/gunwflowers.png" class="midSizeRight statsImg" />Statistics</h1>
+    <p>The list of children's and teenagers' deaths include all deaths by firearm, including accidental deaths, deaths in mass shootings, and suicides. A quick insight into how many people died each year for the last four years in mass shootings.</p>
+</article>
 
 <ul>
     <?php
