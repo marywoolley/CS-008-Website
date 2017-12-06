@@ -6,9 +6,6 @@ include 'top.php';
     print_r($_POST);
     print'</pre>';   
 
-
-$thisURL = $domain . $phpSelf;
-
 /* initialize variables */
 
 $myFirstName = "";
@@ -24,6 +21,15 @@ $myState = "-";
 $myPostalCode = "";
 
 $myEmail = "";
+
+$myAmount = '0.00';
+
+$myCardNum = "";
+
+$myMonth = "-";
+$myYear = "-";
+
+$myCvvNum = "";
 
 $errorMsg = array();   
 
@@ -46,6 +52,15 @@ $stateERROR = false;
 $postalCodeERROR = false;
 
 $emailERROR = false;
+
+$amountERROR = false;
+
+$cardNumERROR = false;
+
+$monthERROR = false;
+$yearERROR = false;
+
+$cvvERROR = false;
 
 if(isset($_POST["btnSubmit"])){
     
@@ -76,16 +91,20 @@ if(isset($_POST["btnSubmit"])){
     $email = filter_var($_POST["myEmail"], FILTER_SANITIZE_EMAIL);
     $dataRecord[] = $email;
     
-    $ownNone = true;
-    $ownOne = true;
-    $ownMultiple = true;
-    $famOwns = true;
-    $closeFriendOwns = true;
-    $gunTraining = true;
-    $militaryMember = true;
-    $experiencedGunViolence = true;
-    $famExperienced = true;
-    $closeFriendExperienced = true;
+    $myAmount = htmlentities($_POST["myAmount"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $myAmount;
+    
+    $myCardNum = htmlentities($_POST["myCardNum"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $myCardNum;
+    
+    $myMonth = htmlentities($_POST["myMonth"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $myMonth;
+    $myYear = htmlentities($_POST["myYear"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $myYear;
+    $myExpDate = $myMonth + $myYear;
+    
+    $myCvvNum = htmlentities($_POST["myCvvNum"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $myCvvNum;
     
     /* validate!! */
     
@@ -141,6 +160,28 @@ if(isset($_POST["btnSubmit"])){
         $postalCodeERROR = true;
     }
     
+    if($myAmount != "25.00" AND $myAmount != "50.00" AND $myAmount != "100.00" AND $myAmount != "500.00" AND $myAmount != "1000.00"){
+       $errorMsg[] = "Please choose an amount";
+       $amountERROR = true;
+    }
+    
+    if($myCardNum == ""){
+        $errorMsg[] = "Please enter your card number";
+        $cardNumERROR = true;
+    }elseif(!verifyAlphaNum($myCardNum)){
+        $errorMsg[] = "Your card number appears to have extra characters";
+        $cardNumERROR = true;
+    }
+    
+    if($myMonth == "-"){
+        $errorMsg[] = "Please enter a valid expiration date";
+        $monthERROR = true;
+    }
+    if($myYear == "-"){
+        $errorMsg[] = "Please enter a valid expiration date";
+        $yearERROR = true;
+    }
+    
     if(isset($_POST[""]))
     
     if(!$errorMsg){
@@ -168,6 +209,8 @@ if(isset($_POST["btnSubmit"])){
     $file = fopen($filename, 'a');
     
     fputcsv($file, $dataRecord);
+    
+    fclose($file);
     
     $message = '<h2>Your information</h2>';
     
@@ -221,7 +264,13 @@ if(isset($_POST["btnSubmit"])){
             <p>Last Name:
                 <input type="text" name="myLastName" placeholder="Last Name">
             </p>
-            <p>Billing Address:</p>
+            
+            <p>Email:
+                <input type="text" name="myEmail" placeholder="youremail@website.com">
+            </p>
+            
+            <fieldset>
+            <legend>Billing Address:</legend>
             <p>Street:
                 <input type="text" name="myStreet" placeholder="Street Address">
             </p>
@@ -284,45 +333,36 @@ if(isset($_POST["btnSubmit"])){
                     <option value="WY">WY</option>
                 </select>
             </p>
-            <!-- drop box for state? -->
             
             <p>ZIP Code:
                 <input type="text" name="myPostalCode" placeholder="ZIP Code">
             </p>
             
-            <p>Email:
-                <input type="text" name="myEmail" placeholder="youremail@website.com">
-            </p>
+            </fieldset>
             
-        </fieldset>
-        <!--Checkboxes--!>
-        <fieldset id='quickInfo'>
-            <legend>A Quick Survey</legend>
-            <p>Please select the following that apply to your experience:</p>
-            <br />
-            <input type="checkbox" name="ownNone" value="Do not own a gun" checked="checked" />Do not own a gun <br />
-            <input type="checkbox" name="ownOne" value="Own one gun" />Own one gun <br />
-            <input type="checkbox" name="ownMultiple" value="Own multiple guns" /> Own multiple guns <br />
-            <input type="checkbox" name="famOwns" value="Family member owns a gun" /> Family member owns a gun <br />
-            <input type="checkbox" name="closeFriendOwns" value="Close friend owns a gun" /> Close friend owns a gun <br />
-            <input type="checkbox" name="gunTraining" value="Have had training with guns" /> Have had training with guns <br />
-            <input type="checkbox" name="militaryMember" value="Am/Was a member of the military" /> Am/Was a member of the military <br />
-            <input type="checkbox" name="experiencedGunViolence" value="Have expierienced gun violence" /> Have experienced gun violence <br />
-            <input type="checkbox" name="famExperienced" value="Family member has experienced gun violence" /> Family member has experienced gun violence <br />
-            <input type="checkbox" name="closeFriendExperienced" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence <br />
         </fieldset>
         
         <fieldset id="paymentInfo">
             <legend>Payment Information</legend>
             
             <p>Amount:
-                <input type="radio" name="myAmount" value="25.00" >$25.00
-                <input type="radio" name="myAmount" value="50.00" >$50.00
-                <input type="radio" name="myAmount" value="100.00" >$100.00
-                <input type="radio" name="myAmount" value="500.00" >$500.00
-                <input type="radio" name="myAmount" value="1000.00" >$1,000.00
+                <label class="radio-field">
+                    <input type="radio" name="myAmount" value="25.00" >
+                    $25.00</label>
+                <label class="radio-field">
+                    <input type="radio" name="myAmount" value="50.00" >
+                    $50.00</label>
+                <label class="radio-field">
+                    <input type="radio" name="myAmount" value="100.00" >
+                    $100.00</label>
+                <label class="radio-field">
+                    <input type="radio" name="myAmount" value="500.00" >
+                    $500.00</label>
+                <label class="radio-field">
+                    <input type="radio" name="myAmount" value="1000.00" >
+                    $1,000.00</label>
                 <input type="radio" name="myAmount" value="" >
-                    <input type="text" placeholder="$XXX.XX">
+                    <input type="text" name="myAmount" placeholder="$XXX.XX">
             </p>
             
             <p>Card Number:
@@ -331,6 +371,7 @@ if(isset($_POST["btnSubmit"])){
             
             <p>Expiration Date:
                 <select name="myMonth">
+                    <option value="-"> - </option>
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -345,6 +386,7 @@ if(isset($_POST["btnSubmit"])){
                     <option value="12">12</option>
                 </select>
                 <select name="myYear">
+                    <option value="-"> - </option>
                     <option value="2017">2017</option>
                     <option value="2018">2018</option>
                     <option value="2019">2019</option>
@@ -361,8 +403,11 @@ if(isset($_POST["btnSubmit"])){
             <p>CVV Number:
                 <input type="text" name="myCvvNum" maxlength="1" placeholder="XXX">
             </p>
-    
-    </form>
+            
+            </fieldset>
+            
+             <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="donate" >
+     </form>
     
 </article>
 
