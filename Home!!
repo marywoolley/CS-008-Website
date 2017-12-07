@@ -183,6 +183,8 @@ if(isset($_POST["btnSubmit"])){
   <div class='references'><h2>References</h2>
   <p>“Las Vegas Shooting: What We Know.” CNN, Cable News Network, 3 Oct. 2017, www.cnn.com/2017/10/02/us/las-vegas-shooting-what-we-know/index.html.</p>
   <p>“Second Amendment.” LII / Legal Information Institute, 5 Feb. 2010, www.law.cornell.edu/constitution/second_amendment.</p>
+  <p>http://www.margutte.com/wordpress/wp-content/uploads/2015/11/flower_power.jpg</p>
+  <p>https://qzprod.files.wordpress.com/2017/10/ap_6608010457.jpg?quality=80&strip=all&w=3022</p>
   </div>
 </article>
 
