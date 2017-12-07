@@ -37,6 +37,10 @@ img{
 h2 {
     font-size: 16pt;
 }
+div.references {
+    font-size: smaller;
+    font-stretch: semi-condensed;
+}
 /* ----- ** NAVIGATION ** ----- */
 nav {
     background-color: rgb(43, 89, 97);
@@ -119,4 +123,19 @@ textarea {
 }
 button {
     margin: auto;
+}
+
+button {
+    margin: auto;
+}
+input[type=submit]{
+    background: none;
+    margin: 0em 0em 0em 3em;
+    font-size: 13pt;
+    padding: 0.5em 1.5em;
+}
+
+a:link {
+    color: rgb(43, 89, 97);
+    text-decoration: none;
 }
