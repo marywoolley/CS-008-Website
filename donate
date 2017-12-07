@@ -408,7 +408,9 @@ if(isset($_POST["btnSubmit"])){
             
              <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="donate" >
      </form>
-    
+     <div class="references"><h2>References</h2>
+        <p>http://saimg-a.akamaihd.net/saatchi/399622/art/1648665/843948-7.jpg</p>
+    </div>
 </article>
 
 <?php
