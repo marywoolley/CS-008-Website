@@ -27,7 +27,7 @@ if(isset($_POST["btnSubmit"])){
         die($msg);
     }
 
-    if(isset($_POST["ownNone"])){
+    if(isset($_POST["chkownNone"])){
         $ownNone = true;
         $totalChecked++;
     }else{
@@ -35,7 +35,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $ownNone;
     
-    if(isset($_POST["ownOne"])){
+    if(isset($_POST["chkownOne"])){
         $ownOne = true;
         $totalChecked++;
     }else{
@@ -43,7 +43,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $ownOne;
     
-    if(isset($_POST["ownMultiple"])){
+    if(isset($_POST["chkownMultiple"])){
         $ownMultiple = true;
         $totalChecked++;
     }else{
@@ -51,7 +51,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $ownMultiple;
     
-    if(isset($_POST["famOwns"])){
+    if(isset($_POST["chkfamOwns"])){
         $famOwns = true;
         $totalChecked++;
     }else{
@@ -59,7 +59,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $famOwns;
     
-    if(isset($_POST["closeFriendOwns"])){
+    if(isset($_POST["chkcloseFriendOwns"])){
         $closeFriendOwns = true;
         $totalChecked++;
     }else{
@@ -67,7 +67,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $closeFriendOwns;
     
-    if(isset($_POST["gunTraining"])){
+    if(isset($_POST["chkgunTraining"])){
         $gunTraining = true;
         $totalChecked++;
     }else{
@@ -75,7 +75,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $gunTraining;
     
-    if(isset($_POST["militaryMember"])){
+    if(isset($_POST["chkmilitaryMember"])){
         $militaryMember = true;
         $totalChecked++;
     }else{
@@ -83,7 +83,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $militaryMember;
     
-    if(isset($_POST["experiencedGunViolence"])){
+    if(isset($_POST["chkexperiencedGunViolence"])){
         $experiencedGunViolence = true;
         $totalChecked++;
     }else{
@@ -91,7 +91,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $experiencedGunViolence;
     
-    if(isset($_POST["famExperienced"])){
+    if(isset($_POST["chkfamExperienced"])){
         $famExperienced = true;
         $totalChecked++;
     }else{
@@ -99,7 +99,7 @@ if(isset($_POST["btnSubmit"])){
     }
     $dataRecord[] = $famExperienced;
     
-    if(isset($_POST["closeFriendExperienced"])){
+    if(isset($_POST["chkcloseFriendExperienced"])){
         $closeFriendExperienced = true;
         $totalChecked++;
     }else{
