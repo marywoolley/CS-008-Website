@@ -83,6 +83,10 @@ include 'top.php';
     print '</li>';
     ?>
 </ul>
+    <div class='references'><h2>References</h2>
+    <p>“Gun Violence Archive.” Gun Violence Archive, 2017, www.gunviolencearchive.org/.</p>
+    <p>http://popculturephilosopher.com/wp-content/uploads/2016/07/www.pinterest.com_.jpeg</p>
+    </div>
 </article>
 
 <?php
