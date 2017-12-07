@@ -12,7 +12,7 @@
         print '</li>';
         
         print '<li class="';
-        if ($path_parts['filename'] == "statistics") {
+        if ($path_parts['filename'] == "stats") {
             print 'activePage';
         }
         print '">';
