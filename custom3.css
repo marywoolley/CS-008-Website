@@ -121,9 +121,7 @@ textarea {
     font: 13pt Arial,Helvetica,sans-serif;
     padding: 0.3em;
 }
-button {
-    margin: auto;
-}
+
 
 button {
     margin: auto;
@@ -134,7 +132,10 @@ input[type=submit]{
     font-size: 13pt;
     padding: 0.5em 1.5em;
 }
-
+div.references {
+    font-size: smaller;
+    font-stretch: semi-condensed;
+}
 a:link {
     color: rgb(43, 89, 97);
     text-decoration: none;
