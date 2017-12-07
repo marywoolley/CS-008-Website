@@ -152,17 +152,17 @@ if(isset($_POST["btnSubmit"])){
         support gun use and ignore the consequences until they themselves have to face them. Instead of waiting for tragedy to 
         strike, be proactive. If you insist on owning a gun, keep it hidden and locked away from you children and family members. 
         Do not leave the gun or gun loaded and before purchasing yourself a firearm, invest in some lessons so you know how to safely fire and store your weapon.</p>
-
+  <br />
   <p class="quote"><img alt="" src="images/elizabeth-warren.jpg" class="roundedCornersSmall midSizeRight" />“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
   <p>-Elizabeth Warren</p>
-
+  <br />
   <h1>Amendment II:</h1>
   <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
-
+  <br />
   <fieldset id='quickInfo'>
         <legend>A Quick Survey</legend>
-        <p>Please select the following that apply to your experience:</p>
-        <br />
+        <p>The data gathered from this survey is used purely for research purposes, and is completely anonymous.</p>
+        <p>Please select the following that apply to your personal experience:</p>
         <input type="checkbox" name="ownNone" value="Do not own a gun" checked="checked" />Do not own a gun <br />
         <input type="checkbox" name="ownOne" value="Own one gun" />Own one gun <br />
         <input type="checkbox" name="ownMultiple" value="Own multiple guns" /> Own multiple guns <br />
@@ -173,13 +173,14 @@ if(isset($_POST["btnSubmit"])){
         <input type="checkbox" name="experiencedGunViolence" value="Have expierienced gun violence" /> Have experienced gun violence <br />
         <input type="checkbox" name="famExperienced" value="Family member has experienced gun violence" /> Family member has experienced gun violence <br />
         <input type="checkbox" name="closeFriendExperienced" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence <br />
-        
+        <br />
         <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Submit" >   
   </fieldset>
   
-  <h2>References</h2>
+  <div class='references'><h2>References</h2>
   <p>“Las Vegas Shooting: What We Know.” CNN, Cable News Network, 3 Oct. 2017, www.cnn.com/2017/10/02/us/las-vegas-shooting-what-we-know/index.html.</p>
   <p>“Second Amendment.” LII / Legal Information Institute, 5 Feb. 2010, www.law.cornell.edu/constitution/second_amendment.</p>
+  </div>
 </article>
 
 <?php
