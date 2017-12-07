@@ -14,12 +14,11 @@ p {
 }
 .fiftyPercent{
     width: 50%;
-    text-align: center;
     padding: 1em;
     margin: auto;
 }
 .roundedCornersSmall{
-    border-radius: 0.4em;
+    border-radius: 0.3em;
 }
 .midSizeRight {
     width: 45%;
@@ -40,6 +39,14 @@ h2 {
 div.references {
     font-size: smaller;
     font-stretch: semi-condensed;
+}
+figure {
+    font-style: italic;
+    text-align: center;
+}
+figcaption {
+    font-style: italic;
+    text-align: center;
 }
 /* ----- ** NAVIGATION ** ----- */
 nav {
@@ -67,17 +74,14 @@ nav .activePage {
 }
 footer nav {
    background-color: rgb(43, 89, 97);
-   opacity: 0.75;
+   opacity: 0.65;
 }
 
 /* ----- ** HOME PAGE ** ----- */
 p[class="quote"]{
     font-style: italic;
 }
-figcaption {
-    font-style: italic;
-    text-align: center;
-}
+
 /* ----- ** FOOTER ** ----- */
 footer p {
     text-align: center;
