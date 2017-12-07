@@ -56,9 +56,13 @@ if (isset($_POST["btnSubmit"])) {
  <article>
  <h1>Contact Us</h1>
   <h1>Authors:</h1>
+  <figure class='roundedCornersSmall midSizeRight' >
+      <img src='images/mary-and-echo.JPG' alt='' title="Woolley and Norcott">
+      <figcaption>Woolley and Norcott, respectively</figcaption>
+  </figure>
   <h2>Echo Norcott</h2>
   <p></p>
-  <p>Email me at</p>
+  <p>Email <a href='mailto:'>Echo Norcott</a></p>
   <h2><img src="images/mary-w-horse.jpg" alt="" class="roundedCornersSmall midSizeRight" title="Mary Woolley"/>Mary Woolley</h2>
   <p>I from a family with very mixed feelings about gun control. I grew up listening to my father's family insist that it is a 
   basic human right to bare arms. They would become enraged when the news, reporting on some tragedy, brought up strengthening 
@@ -66,7 +70,8 @@ if (isset($_POST["btnSubmit"])) {
   just over an hour from Sandy Hook, and had been there many times. Unfortunately it took striking a chord close to home to 
   make me realized the real devastation of gun violence. Today, I strongly advocate enforcing stricter gun control despite 
   our second amendment.</p>
-  <p>Email me at woolleymary1@gmail.com</p>
+  <p>Email <a href='mailto: woolleymary1@gmail.com'>Mary Woolley</a></p>
+
 
 <br />
 <br />
