@@ -10,7 +10,7 @@ article {
     margin: auto;
 }
 p {
-    text-indent: 3em;
+    text-indent: 2em;
 }
 .fiftyPercent{
     width: 50%;
@@ -110,7 +110,7 @@ history h1{
 
 /* ----- ** DONATE PAGE ** ----- */
 fieldset {
-    padding: 0.2em;
+    padding: 1em;
     margin: 1em;
 }
 
