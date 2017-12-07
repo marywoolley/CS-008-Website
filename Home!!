@@ -147,7 +147,7 @@ if(isset($_POST["btnSubmit"])){
     <img alt="" src="images/ut-shooting.jpg">
     <figcaption>The shooting at University of Texas that left 15 dead in 1966.</figcaption>
   </figure>
-
+  <p>With just a little more gun control, we could save our country hundreds of deaths per year. If gun owners were simply required to keep their firearms locked away and unloaded while they are not being used the country could be saved hundreds of tragedies yearly. Additionally, assault weapons are highly dangerous. Banning them from civilian use could prevent countless deaths.</p>
   <p>Everyday thousands of lives are affected by guns. Children are accidentally killed by parents, 
         troubled teenagers get ahold of family firearms and take their own lives, and men and women with hate in their hearts 
         walk into movie theaters and massacre people they have never met. Hundred are left mentally and physically scarred from 
@@ -156,7 +156,7 @@ if(isset($_POST["btnSubmit"])){
         strike, be proactive. If you insist on owning a gun, keep it hidden and locked away from you children and family members. 
         Do not leave the gun or gun loaded and before purchasing yourself a firearm, invest in some lessons so you know how to safely fire and store your weapon.</p>
   <br />
-  <p class="quote"><img alt="" src="images/elizabeth-warren.jpg" class="roundedCornersSmall midSizeRight" />“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
+  <p class="quote"><img alt="" src="images/elizabeth-warren.jpg" class="roundedCornersSmall midSizeRight" title='Elizabeth Warren'/>“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
   <p>-Elizabeth Warren</p>
   <br />
   <h1>Amendment II:</h1>
