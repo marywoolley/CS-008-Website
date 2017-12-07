@@ -139,10 +139,13 @@ if(isset($_POST["btnSubmit"])){
 <title>Home</title>
 <!-- insert picture -->
 <article>
-  <h1> The Las Vegas shooting: 58 dead, 500 injured, 15 minutes. </h1>
-  <figure class="center mid">
+  <figure class="midSizeRight">
     <img alt="" src="images/flowerpower.png">
     <figcaption>The Flower Power movement, protesting the Vietnam War.</figcaption>
+    </figure>
+  <figure class="midSizeLeft">
+    <img alt="" src="images/ut-shooting.jpg">
+    <figcaption>The shooting at University of Texas that left 15 dead in 1966.</figcaption>
   </figure>
 
   <p>Everyday thousands of lives are affected by guns. Children are accidentally killed by parents, 
