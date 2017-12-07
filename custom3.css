@@ -113,7 +113,9 @@ fieldset {
     padding: 1em;
     margin: 1em;
 }
-
+fieldset p{
+    text-indent: 0;
+}
 /* ----- ** CONTACT PAGE ** ----- */
 textarea {
     height: 150px;
