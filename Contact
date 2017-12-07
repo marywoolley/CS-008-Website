@@ -61,16 +61,23 @@ if (isset($_POST["btnSubmit"])) {
       <figcaption>Woolley and Norcott, respectively</figcaption>
   </figure>
   <h2>Echo Norcott</h2>
-  <p></p>
-  <p>Email <a href='mailto:'>Echo Norcott</a></p>
+  <p>I knew as a young child that I did not agree with any sort of violence. My family has owned guns, as many members of my family are cops, or
+  were in the military. I was never comfortable around the weapons, knowing that they were designed for the purpose of injuring others.
+  But it wasn't until the Aurora Shooting in 2012, with the Sandy Hook Shooting just a few short months after, that I realized 
+  just how badly we needed stronger gun control. Where I lived in Virginia, there is a tragic suicide epidemic. I began to 
+  realize that we didn't just need gun control to prevent homicides, we needed it to prevent suicides as well. Our Constitution
+  is popularly described as a "living" document, since it was written so that it can be amended to fit our needs of the time. 
+  I strongly believe that we need stricter gun laws for our country that has changed quite a bit from when our laws were written
+  in 1788.</p>
+  <p><a href='mailto: enorcott@uvm.edu'>Email Echo Norcott</a></p>
   <h2><img src="images/mary-w-horse.jpg" alt="" class="roundedCornersSmall midSizeRight" title="Mary Woolley"/>Mary Woolley</h2>
-  <p>I from a family with very mixed feelings about gun control. I grew up listening to my father's family insist that it is a 
+  <p>I am from a family with very mixed feelings about gun control. I grew up listening to my father's family insist that it is a 
   basic human right to bare arms. They would become enraged when the news, reporting on some tragedy, brought up strengthening 
   gun control. I did not agree with them, but I did not form my own opinion until the shooting at Sandy Hook in 2012. I live 
   just over an hour from Sandy Hook, and had been there many times. Unfortunately it took striking a chord close to home to 
   make me realized the real devastation of gun violence. Today, I strongly advocate enforcing stricter gun control despite 
   our second amendment.</p>
-  <p>Email <a href='mailto: woolleymary1@gmail.com'>Mary Woolley</a></p>
+  <p><a href='mailto: woolleymary1@gmail.com'>Email Mary Woolley</a></p>
 
 
 <br />
