@@ -97,8 +97,7 @@ header img {
 }
 
 header {
-    padding: 3em 8em 8em 8em;
-    padding-bottom: 3em;
+    padding: 3em 8em 3em 8em;
     margin: auto;
     min-width: 50%;
 }
@@ -110,7 +109,7 @@ history h1{
 
 /* ----- ** DONATE PAGE ** ----- */
 fieldset {
-    padding: 1em;
+    padding: 2em;
     margin: 1em;
 }
 fieldset p{
