@@ -135,9 +135,12 @@ input[type=submit]{
 }
 div.references {
     font-size: smaller;
-    font-stretch: semi-condensed;
+    font-stretch: condensed;
 }
 a:link {
     color: rgb(43, 89, 97);
     text-decoration: none;
+}
+p a:link {
+    font-weight: bold;
 }
