@@ -13,10 +13,19 @@ $experiencedGunViolence = false;
 $famExperienced = false;
 $closeFriendExperienced = false;
 
+$dataRecord = array();
+$errorMsg = array();
+
 $experienceERROR = false;
 $totalChecked = 0;
 
 if(isset($_POST["btnSubmit"])){
+
+    if (!securityCheck($thisURL)) {
+        $msg = '<p>Sorry, you cannot access this page. ';
+        $msg.= 'Security breach detected and reported. </p>';
+        die($msg);
+    }
 
     if(isset($_POST["ownNone"])){
         $ownNone = true;
@@ -99,7 +108,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $closeFriendExperienced;
     
     if($totalChecked < 1){
-        $errorMsg[] = "Please choose at least one option";
+        $errorMsg[] = "Please choose at least one option.";
         $activityERROR = true;
     }
     
@@ -162,24 +171,109 @@ if(isset($_POST["btnSubmit"])){
   <h1>Amendment II:</h1>
   <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
   <br />
-  <fieldset id='quickInfo'>
+  
+<?php
+        if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked with: end body submit
+            print '<h1>Thank you for taking our survey!</h1>';
+        }
+
+        if ($errorMsg) {
+            print '<div id="errors">' . PHP_EOL;
+            print '<ul>' . PHP_EOL;
+            
+            foreach ($errorMsg as $err) {
+                print '<li>' . $err . '</li>' . PHP_EOL;
+            }
+            
+            print '</ul>' . PHP_EOL;
+            print '</div>' . PHP_EOL;
+        }
+    
+?>
+<form action="<?php print $phpSelf; ?>"
+    id='quickInfo'
+    method="post">
+        <fieldset>
         <legend>A Quick Survey</legend>
         <p>The data gathered from this survey is used purely for research purposes, and is completely anonymous.</p>
         <p>Please select the following that apply to your personal experience:</p>
-        <input type="checkbox" name="ownNone" value="Do not own a gun" checked="checked" />Do not own a gun <br />
-        <input type="checkbox" name="ownOne" value="Own one gun" />Own one gun <br />
-        <input type="checkbox" name="ownMultiple" value="Own multiple guns" /> Own multiple guns <br />
-        <input type="checkbox" name="famOwns" value="Family member owns a gun" /> Family member owns a gun <br />
-        <input type="checkbox" name="closeFriendOwns" value="Close friend owns a gun" /> Close friend owns a gun <br />
-        <input type="checkbox" name="gunTraining" value="Have had training with guns" /> Have had training with guns <br />
-        <input type="checkbox" name="militaryMember" value="Am/Was a member of the military" /> Am/Was a member of the military <br />
-        <input type="checkbox" name="experiencedGunViolence" value="Have expierienced gun violence" /> Have experienced gun violence <br />
-        <input type="checkbox" name="famExperienced" value="Family member has experienced gun violence" /> Family member has experienced gun violence <br />
-        <input type="checkbox" name="closeFriendExperienced" value="Close friend has experienced gun violence" /> Close friend has experienced gun violence <br />
+            <p>
+                <label class="check-field">
+                    <input <?php if($ownNone) print " checked"; ?>
+                        id="chkownNone"
+                        name="chkownNone"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Do not own a gun">Do not own a gun</label><br />
+                <label class="check-field">
+                    <input <?php if($ownOne) print " checked"; ?>
+                        id="chkownOne"
+                        name="chkownOne"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Own one gun">Own one gun</label><br />
+
+                <label class="check-field">
+                    <input <?php if($ownMultiple) print " checked"; ?>
+                        id="chkownMultiple"
+                        name="chkownMultiple"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Own multiple guns">Own multiple guns</label><br />
+                <label class="check-field">
+                    <input <?php if($famOwns) print " checked"; ?>
+                        id="chkfamOwns"
+                        name="chkfamOwns"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Family member owns a gun">Family member owns a gun</label><br />
+                <label class="check-field">
+                    <input <?php if($closeFriendOwns) print " checked"; ?>
+                        id="chkcloseFriendOwns"
+                        name="chkcloseFriendOwns"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Close friend owns a gun">Close friend owns a gun</label><br />
+                <label class="check-field">
+                    <input <?php if($gunTraining) print " checked"; ?>
+                        id="chkgunTraining"
+                        name="chkgunTraining"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Have had training with guns">Have had training with guns</label><br />
+                <label class="check-field">
+                    <input <?php if($militaryMember) print " checked"; ?>
+                        id="chkmilitaryMember"
+                        name="chkmilitaryMember"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Am/Was a member of the military">Am/Was a member of the military</label><br />
+                <label class="check-field">
+                    <input <?php if($experiencedGunViolence) print " checked"; ?>
+                        id="chkexperiencedGunViolence"
+                        name="chkexperiencedGunViolence"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Have experienced gun violence">Have experienced gun violence</label><br />
+                <label class="check-field">
+                    <input <?php if($famExperienced) print " checked"; ?>
+                        id="chkfamExperienced"
+                        name="chkfamExperienced"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Family member has experienced gun violence">Family member has experienced gun violence</label><br />
+                <label class="check-field">
+                    <input <?php if($closeFriendExperienced) print " checked"; ?>
+                        id="chkcloseFriendExperienced"
+                        name="chkcloseFriendExperienced"
+                        tabindex="420"
+                        type="checkbox"
+                        value="Close friend has experienced gun violence">Close friend has experienced gun violence</label>
+            </p>
         <br />
         <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Submit" >   
   </fieldset>
-  
+  </form>
   <div class='references'><h2>References</h2>
   <p>“Las Vegas Shooting: What We Know.” CNN, Cable News Network, 3 Oct. 2017, www.cnn.com/2017/10/02/us/las-vegas-shooting-what-we-know/index.html.</p>
   <p>“Second Amendment.” LII / Legal Information Institute, 5 Feb. 2010, www.law.cornell.edu/constitution/second_amendment.</p>
