@@ -3,23 +3,25 @@ include ('top.php')
 ?>
 <article>
   <h1>A Short History of Gun and Gun Laws</h1>
+  <p>Currently, only eleven states require citizens to lock up their guns when not in use and only eight completely ban assault weapons. Locking up weapons could save hundreds of lives each year, preventing accidental death and some suicides.</p>
+  <br />
   <p>In the 1750s guns are becoming more common place. Pistols are produced more easily and are beginning to replace swords in day to day life and in duels.</p>
   <p><figure class='midSizeRight'><img src="images/colt-revolver.jpg" alt="" class="roundedCornersSmall" title="Colt Revolver"/><figcaption>Colt Revolver 1835</figcaption></figure>In 1791 the Second Amendment is ratified</p>
   <p>The percussion cap replaces flintlock ignition in 1807. These make it less likely for a gun to misfire and would work 
   in any weather.</p>
   <p>The percussion cap would not be used by the US military until 1833.</p>
-  <p><img src="images/colt-revolver.jpg" alt="" class="roundedCornersSmall midSizeRight" title="Colt Revolver"/>The Industrial Age starts and in 1835 the Colt revolver is invented and mass produced. This is the first revolving, 
+  <p>The Industrial Age starts and in 1835 the Colt revolver is invented and mass produced. This is the first revolving, 
   multi-shot gun.</p>
   <p>Pin-fire cartridges become common place in 1840. They made it easy to check if the gun was loaded or not.</p>
   <p>In 1859 rim-fire cartridges come into use. They are cheap, and make guns more powerful. Soon after, in 1960, the 
   Spencer Repeating Rifle is shown to the government but is shot down until 1963, stating that it was a waste of ammunition. 
   In 1961 Breech guns are common, loading in the back of the gun as opposed to the muzzle.</p>
   <p>1862 is when the spring loaded, rapid-fire gun appears: the Gatling gun.</p>
-  <p>The center-fire cartridge is invented in 1869, more reliable.</p>
+  <p><figure class=" midSizeRight"><img src="images/submachinegun.jpg" alt="" class="roundedCornersSmall" title="First Submachine Gun"/><figcaption>First Submachine Gun</figcaption></figure>The center-fire cartridge is invented in 1869, more reliable.</p>
   <p>In 1871 the first cartridge revolver is made, a compact, quickly shooting gun.</p>
   <p>Double action revolvers are introduced in 1877. You no longer need to cock the gun before pulling the trigger</p>
   <p>The Lee Box magazine, best for rapid loading and reloading, is released in 1879.</p>
-  <p><figure class=" midSizeRight"><img src="images/submachinegun.jpg" alt="" class="roundedCornersSmall" title="First Submachine Gun"/><figcaption>First Submachine Gun</figcaption></figure>1892- the year of the first automatic handgun.</p>
+  <p>1892- the year of the first automatic handgun.</p>
   <p>The automatic Winchester rifle is released in 1903.</p>
   <p>For the First World War a submachine gun is developed that is lighter than pervious models and used pistol ammunition</p>
   <p>From the 1940s to the 70s police carry an S&W .38 caliber revolver, and is still considered the best handgun for 
@@ -29,13 +31,12 @@ include ('top.php')
   <p>The Browning 1935 model has a cartridge that holds 13 shots as opposed to 7.</p>
   <p>The AK-47 is invented by the Soviets.</p>
   <p>In 1958 the M-16 is introduced to warfare and in 1968 it becomes the standard infantry weapon for the Army.</p>
-  <p><img src="images/kennedyassassination.jpg" alt="" class="roundedCornersSmall midSizeRight" title="Kennedy's Assassination"/>After the assassination of President Kennedy, the Gun Control Act more closely supervises gun trafficking.</p>
-  <p>In 1986 the Firearm's Owner Protection act is put into place to ban felons from owning guns. The same year, the Law 
+  <p>After the assassination of President Kennedy, the Gun Control Act more closely supervises gun trafficking.</p>
+  <p><figure class="midSizeRight"><img src="images/kennedyassassination.jpg" alt="" class="roundedCornersSmall" title="Kennedy's Assassination"/><figcaption>Kennedy's Assassination</figcaption></figure>In 1986 the Firearm's Owner Protection act is put into place to ban felons from owning guns. The same year, the Law 
   Enforcement Officer's Protection Act is ratified, banning ammunition that can best a bullet-proof vest.</p>
-  <p><figure class="midSizeRight"><img src="images/kennedyassassination.jpg" alt="" class="roundedCornersSmall" title="Kennedy's Assassination"/><figcaption>Kennedy's Assassination</figcaption></figure>In 1994 citizens are banned from owning several types of assault weapons.</p>
+  <p>In 1994 citizens are banned from owning several types of assault weapons.</p>
   <p>The Supreme Court rules in 2008 that the Second Amendment protects the rights of citizens to own firearms not in 
   connection to any sort of militia.</p>
-  
   <div class='references'>
   <h2>References</h2>
   <p>“Gun Timeline.” PBS, Public Broadcasting Service, 2003-2014. www.pbs.org/opb/historydetectives/technique/gun-timeline/.</p>
