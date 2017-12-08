@@ -1,6 +1,6 @@
 <!-- navigation page -->
 <nav>
-    <ol>
+    <ul>
         <?php
         
         print '<li class="';
@@ -51,5 +51,5 @@
         print '<a href="donate.php">Donate</a>';
         print '</li>';
         ?>
-    </ol>
+    </ul>
 </nav>
