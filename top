@@ -73,7 +73,9 @@ $path_parts = pathinfo($phpSelf);
   
   include 'header.php';
   include 'nav.php';
-  
+  ?>
+  <hr />
+  <?php
   if ($debug) {
     print '<p>DEBUG MODE IS ON</p>';
   }
