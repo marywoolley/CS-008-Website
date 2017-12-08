@@ -3,6 +3,7 @@ body {
     font: 14pt Arial,Helvetica,sans-serif;
     margin: auto;
     width: 90%;
+    background-color: rgb(245, 255, 255);
 }
 article {
     width: 75%;
@@ -45,7 +46,14 @@ figcaption {
     text-align: center;
 }
 /* ----- ** NAVIGATION ** ----- */
-nav {
+nav ul {
+    list-style-type: none;
+    font-size: 24px;
+    margin-top: 0em;
+    padding-top: 0em;
+    line-height: 1.3em;
+}
+/* nav {
     background-color: rgb(43, 89, 97);
     text-align: center;
     padding: 0.3em;
@@ -63,15 +71,27 @@ nav ol li {
 nav a {
     color: rgb(240, 250, 255);
     text-decoration: none;
-}
+} */
 nav .activePage {
-    background-color:rgb(215, 232, 236);
-    color: rgb(43, 89, 97); /* ** change text color so that its visible on lighter background - not working? */
+    background-color:rgb(43, 89, 97);
+    color: rgb(215, 232, 236);
+    height: 1.3em;
+    margin: 0em 15em 0em 26em;
 }
-footer nav {
+header a {
+    color: rgb(43, 89, 97);
+}
+header a:visited {
+    color: rgb(43, 89, 97);
+}
+header a:active {
+    color: rgb(215, 232, 236);
+}
+
+/* footer nav {
    background-color: rgb(43, 89, 97);
    opacity: 0.65;
-}
+}*/
 
 /* ----- ** HOME PAGE ** ----- */
 p[class="quote"]{
@@ -89,11 +109,40 @@ footer {
 .statsImg {
     padding-bottom: 1em;
 }
+footer nav {
+    background-color: rgb(43, 89, 97);
+    text-align: center;
+    padding: 0.3em;
+    color: rgb(240, 250, 255);
+}
+footer ul {
+    padding-left: 0;
+}
+footer li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0em 1.5em;
+    text-align: center;
+}
+footer a {
+    color: rgb(240, 250, 255);
+    text-decoration: none;
+} 
+footer {
+    clear: both;
+    background-color: rgb(43, 89, 97);
+    opacity: 0.75;
+}
+
+footer .activePage {
+    background-color: rgb(215, 232, 236);
+    margin: 0em 1em;
+}
 /* ----- ** HEADER ** ----- */
 header img {
     width: 60%;
     padding: 0em;
-    align-content: center;
+    float: left;
 }
 
 header {
@@ -115,6 +164,31 @@ fieldset {
 fieldset p{
     text-indent: 0;
 }
+.hidden {
+    visibility: hidden;
+}
+.error {
+    background-color: rgb(255, 207, 206);
+}
+div#errors {
+    border: 2px solid;
+    padding: 0.3em;
+    margin-left: 8.5em;
+    background-color: rgb(255, 207, 206);
+    width: 50%;
+    margin-top: 2em;
+}
+div#valid {
+    border: 2px solid;
+    padding: 0.3em;
+    margin-left: 8.5em;
+    background-color: rgb(255, 207, 206);
+    width: 50%;
+    margin-top: 2em;
+}
+select.error {
+    background-color: rgb(255, 207, 206);
+}
 /* ----- ** CONTACT PAGE ** ----- */
 textarea {
     height: 150px;
@@ -122,8 +196,6 @@ textarea {
     font: 13pt Arial,Helvetica,sans-serif;
     padding: 0.3em;
 }
-
-
 button {
     margin: auto;
 }
@@ -143,4 +215,12 @@ a:link {
 }
 p a:link {
     font-weight: bold;
+}
+/* ----- ** STATS PAGE ** ----- */
+ul {
+    margin-left: 2.5em;
+    margin-top: 0.5em;
+}
+tr {
+    text-align: center;
 }
