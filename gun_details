@@ -109,8 +109,11 @@ fclose($file);
             print'</tr>' . PHP_EOL;
     }
     
+    print '</table><br />';
+    
+    print '<p><a href="stats.php">Back to Statistics</a></p>
     ?>
-            </table>
+
             
         </article>
     </body>
