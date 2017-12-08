@@ -17,7 +17,7 @@ $myPostalCode = "";
 
 $myEmail = "";
 
-$myAmount = "";
+$myAmount = "0.00";
 
 $myCardNum = "";
 
@@ -155,7 +155,7 @@ if(isset($_POST["btnSubmit"])){
         $postalCodeERROR = true;
     }
     
-    if($myAmount == ""){
+    if($myAmount == "0.00"){
        $errorMsg[] = "Please choose an amount";
        $amountERROR = true;
     }
@@ -401,8 +401,12 @@ if(isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked wi
                     $500.00</label>
                 <label class="radio-field <?php if($amountERROR){ print'error'; } ?>">
                     <input type="radio" name="myAmount" value="1000.00"
-                           <?php if ($myAmount == "25.00") echo ' checked="checked" '; ?> >
+                           <?php if ($myAmount == "1000.00") echo ' checked="checked" '; ?> >
                     $1,000.00</label>
+                <label class="radio-field hidden <?php if($amountERROR){ print'error'; } ?>">
+                    <input type="radio" name="myAmount" value="00.00"
+                           <?php if ($myAmount == "00.00") echo ' checked="checked" '; ?> >
+                    $00.00</label>
             </p>
             
             <p>Card Number:
