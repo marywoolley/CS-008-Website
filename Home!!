@@ -2,6 +2,7 @@
 <?php
 include ('top.php');
 
+
 $ownNone = true;
 $ownOne = false;
 $ownMultiple = false;
@@ -26,9 +27,9 @@ if(isset($_POST["btnSubmit"])){
         $msg.= 'Security breach detected and reported. </p>';
         die($msg);
     }
-
+    
     if(isset($_POST["chkownNone"])){
-        $ownNone = true;
+        $ownNone = 'Do not own a gun';
         $totalChecked++;
     }else{
         $ownNone = false;
@@ -36,7 +37,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $ownNone;
     
     if(isset($_POST["chkownOne"])){
-        $ownOne = true;
+        $ownOne = 'Own one gun';
         $totalChecked++;
     }else{
         $ownOne = false;
@@ -44,7 +45,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $ownOne;
     
     if(isset($_POST["chkownMultiple"])){
-        $ownMultiple = true;
+        $ownMultiple = 'Own multiple guns';
         $totalChecked++;
     }else{
         $ownMultiple = false;
@@ -52,7 +53,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $ownMultiple;
     
     if(isset($_POST["chkfamOwns"])){
-        $famOwns = true;
+        $famOwns = 'Family member owns a gun';
         $totalChecked++;
     }else{
         $famOwns = false;
@@ -60,7 +61,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $famOwns;
     
     if(isset($_POST["chkcloseFriendOwns"])){
-        $closeFriendOwns = true;
+        $closeFriendOwns = 'Close friend owns a gun';
         $totalChecked++;
     }else{
         $closeFriendOwns = false;
@@ -68,7 +69,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $closeFriendOwns;
     
     if(isset($_POST["chkgunTraining"])){
-        $gunTraining = true;
+        $gunTraining = 'Have had training with guns';
         $totalChecked++;
     }else{
         $gunTraining = false;
@@ -76,7 +77,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $gunTraining;
     
     if(isset($_POST["chkmilitaryMember"])){
-        $militaryMember = true;
+        $militaryMember = 'Am/was a member of the military';
         $totalChecked++;
     }else{
         $militaryMember = false;
@@ -84,7 +85,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $militaryMember;
     
     if(isset($_POST["chkexperiencedGunViolence"])){
-        $experiencedGunViolence = true;
+        $experiencedGunViolence = 'Have experienced gun violence';
         $totalChecked++;
     }else{
         $experiencedGunViolence = false;
@@ -92,7 +93,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $experiencedGunViolence;
     
     if(isset($_POST["chkfamExperienced"])){
-        $famExperienced = true;
+        $famExperienced = 'Family member has experienced gun violence';
         $totalChecked++;
     }else{
         $famExperienced = false;
@@ -100,7 +101,7 @@ if(isset($_POST["btnSubmit"])){
     $dataRecord[] = $famExperienced;
     
     if(isset($_POST["chkcloseFriendExperienced"])){
-        $closeFriendExperienced = true;
+        $closeFriendExperienced = 'Close friend has experienced gun violence';
         $totalChecked++;
     }else{
         $closeFriendExperienced = false;
@@ -112,7 +113,7 @@ if(isset($_POST["btnSubmit"])){
         $activityERROR = true;
     }
     
-    if(isset($_POST[""])){
+    if(isset($_POST["btnSubmit"])){
     
         if(!$errorMsg){
             if($debug){
@@ -144,9 +145,6 @@ if(isset($_POST["btnSubmit"])){
     }
 }
 ?>
-
-<title>Home</title>
-<!-- insert picture -->
 <article>
   <figure class="midSizeRight">
     <img alt="" src="images/flowerpower.png">
@@ -164,14 +162,16 @@ if(isset($_POST["btnSubmit"])){
         support gun use and ignore the consequences until they themselves have to face them. Instead of waiting for tragedy to 
         strike, be proactive. If you insist on owning a gun, keep it hidden and locked away from you children and family members. 
         Do not leave the gun or gun loaded and before purchasing yourself a firearm, invest in some lessons so you know how to safely fire and store your weapon.</p>
+  <figure class="midSizeRight">
+      <img alt="" src="images/elizabeth-warren.jpg" class="roundedCornersSmall" title='Elizabeth Warren' />
+  </figure>
   <br />
-  <p class="quote"><img alt="" src="images/elizabeth-warren.jpg" class="roundedCornersSmall midSizeRight" title='Elizabeth Warren'/>“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
+  <p class="quote">“We lose eight children and teenagers to gun violence every day. If a mysterious virus suddenly started killing eight of our children every day, America would mobilize teams of doctors and public health officials. We would move heaven and earth until we found a way to protect our children. But not with gun violence.”</p>
   <p>-Elizabeth Warren</p>
-  <br />
+    <br />
   <h1>Amendment II:</h1>
-  <p><blockquote>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</blockquote></p>
-  <br />
-  
+  <p>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</p>
+    <br />
 <?php
         if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked with: end body submit
             print '<h1>Thank you for taking our survey!</h1>';
@@ -193,8 +193,8 @@ if(isset($_POST["btnSubmit"])){
 <form action="<?php print $phpSelf; ?>"
     id='quickInfo'
     method="post">
-        <fieldset>
-        <legend>A Quick Survey</legend>
+    <fieldset class="checkbox">
+    <legend>A Quick Survey</legend>
         <p>The data gathered from this survey is used purely for research purposes, and is completely anonymous.</p>
         <p>Please select the following that apply to your personal experience:</p>
             <p>
@@ -270,10 +270,12 @@ if(isset($_POST["btnSubmit"])){
                         type="checkbox"
                         value="Close friend has experienced gun violence">Close friend has experienced gun violence</label>
             </p>
-        <br />
+
+         <br />
+
         <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Submit" >   
   </fieldset>
-  </form>
+</form>
   <div class='references'><h2>References</h2>
   <p>“Las Vegas Shooting: What We Know.” CNN, Cable News Network, 3 Oct. 2017, www.cnn.com/2017/10/02/us/las-vegas-shooting-what-we-know/index.html.</p>
   <p>“Second Amendment.” LII / Legal Information Institute, 5 Feb. 2010, www.law.cornell.edu/constitution/second_amendment.</p>
