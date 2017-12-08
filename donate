@@ -1,10 +1,5 @@
 <?php
-include 'top.php';
-
-
-    print '<p>Post Array:</p><pre>';
-    print_r($_POST);
-    print'</pre>';   
+include 'top.php';   
 
 /* initialize variables */
 
@@ -22,7 +17,7 @@ $myPostalCode = "";
 
 $myEmail = "";
 
-$myAmount = '0.00';
+$myAmount = "";
 
 $myCardNum = "";
 
@@ -88,8 +83,8 @@ if(isset($_POST["btnSubmit"])){
     $myPostalCode = htmlentities($_POST["myPostalCode"], ENT_QUOTES, "UTF-8");
     $dataRecord[] = $myPostalCode;
     
-    $email = filter_var($_POST["myEmail"], FILTER_SANITIZE_EMAIL);
-    $dataRecord[] = $email;
+    $myEmail = filter_var($_POST["myEmail"], FILTER_SANITIZE_EMAIL);
+    $dataRecord[] = $myEmail;
     
     $myAmount = htmlentities($_POST["myAmount"], ENT_QUOTES, "UTF-8");
     $dataRecord[] = $myAmount;
@@ -117,16 +112,16 @@ if(isset($_POST["btnSubmit"])){
     }
     
     if($myLastName == ""){
-        $errorMsg[] = "Please enter your first name";
+        $errorMsg[] = "Please enter your last name";
         $lastNameERROR = true;
     }elseif(!verifyAlphaNum($myLastName)){
         $errorMsg[] = "Your last name appears to have extra characters";
     }
     
-    if($email == ""){
+    if($myEmail == ""){
         $errorMsg[] = "Please enter your email";
         $emailERROR = true;
-    }elseif(!verifyEmail($email)){
+    }elseif(!verifyEmail($myEmail)){
         $errorMsg[] = "Your email appears to have extra characters";
         $emailERROR = true;
     }
@@ -160,7 +155,7 @@ if(isset($_POST["btnSubmit"])){
         $postalCodeERROR = true;
     }
     
-    if($myAmount != "25.00" AND $myAmount != "50.00" AND $myAmount != "100.00" AND $myAmount != "500.00" AND $myAmount != "1000.00"){
+    if($myAmount == ""){
        $errorMsg[] = "Please choose an amount";
        $amountERROR = true;
     }
@@ -174,24 +169,20 @@ if(isset($_POST["btnSubmit"])){
     }
     
     if($myMonth == "-"){
-        $errorMsg[] = "Please enter a valid expiration date";
         $monthERROR = true;
     }
     if($myYear == "-"){
-        $errorMsg[] = "Please enter a valid expiration date";
         $yearERROR = true;
     }
+    if($monthERROR == true OR $yearERROR == true){
+        $errorMsg[] = "Please enter a valid expiration date";
+    }
     
-    if(isset($_POST[""]))
-    
-    if(!$errorMsg){
-        if($debug){
-            print PHP_EOL . '<p>Form is valid</p>';
-        }
-    }else{
-        if($debug){
-            print PHP_EOL . '<p>Form is invalid</p>';
-        }
+    if($myCvvNum == ""){
+        $errorMsg[] = "Please enter your CVV number";
+        $cvvERROR = true;
+    }elseif(!verifyAlphaNum($myCvvNum)){
+        $errorMsg[] = "Your CVV number appears to have extra characters";
     }
     
     $myFolder = 'data/';
@@ -211,131 +202,177 @@ if(isset($_POST["btnSubmit"])){
     fputcsv($file, $dataRecord);
     
     fclose($file);
+}
+
+if(isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked with: end body submit
+        print '<div id="valid"><h2>Thank you for donating!</h2>';
+        
+        print '<p>Your donation information has ';
+        
+        if(!$mailed) {
+            print "not ";
+        }
+        print 'been sent to: ' . $myEmail . '</p></div>';
+        
+        $validDonation = true;
+        
+    $myFolder = 'data/';
     
-    $message = '<h2>Your information</h2>';
+    $myFileName = 'donate';
+
+    $fileExt = '.csv';
     
-    foreach($_POST as $htmlName => $value) {
-        
-        $message .= '<p>';
-        
-        $camelCase = preg_split('/(?=[A-Z])/', substr($htmlName, 2));
-        
-        foreach($camelCase as $oneWord) {
-            $message .= $oneWord . ' ';
-        }    
-            
-            $message .= ' : ' . htmlentities($value, ENT_QUOTES, "UTF-8") . '</p>';
-            
+    $filename = $myFolder . $myFileName . $fileExt;
+    
+    if($debug){
+        print PHP_EOL . '<p>filename is ' . $filename;
     }
     
-    $to = $email;
+    $file = fopen($filename, 'a');
+    
+    fputcsv($file, $dataRecord);
+    
+    fclose($file);
+    
+    $message = '<h2>Thank you for donating ' . $myFirstName . '!</h2>';
+    
+    $message .= '<p>You just donated $' . $myAmount . '</p>';
+    
+    $message .= '<p>Your billing address is:<br />' . $myFirstName . ' ' . $myLastName . '<br />';
+    
+    $message .= $myStreet . '<br />' . $myCity . ', ' . $myState . ' ' . $myPostalCode . '</p>';
+    
+    $message .= '<p>Your donation is greatly appreciated!</p>';
+    
+    $to = $myEmail;
     $cc = '';
     $bcc = 'echo.norcott@uvm.edu';
     
     $from = "AMEND THE SECOND <customer.service@amendthesecond.com>";
     
-    $subject = "Your Info: ";
+    $subject = "Your Donation";
     
     $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
+        
+    }else{
     
-}
-
+        if ($errorMsg) {
+            print '<div id="errors">' . PHP_EOL;
+            print '<h2>Your form has the following mistakes that need to be fixed.</h2>' . PHP_EOL;
+            print '<ul>' . PHP_EOL;
+            
+            foreach ($errorMsg as $err) {
+                print '<li>' . $err . '</li>' . PHP_EOL;
+            }
+            
+            print '</ul>' . PHP_EOL;
+            print '</div>' . PHP_EOL;
+        }
+    } 
 ?>
 
 <article>
     <h1>Donate</h1>
-    <p>All proceeds will go to the Vas Vegas Victim's Fund. The money you donate will help pay for the medical bills of the 
-    victims of the awful Las Vegas Shooting that happened on October 1, 2017. View more information at 
-    <a href="https://lasvegasvictimsfund.org/">lasvegasvictimsfund.org</a>. Thank you for your contribution</p>
-    <figure>
-        <img alt="bent gun barrel" class="roundedCornersSmall midSize" src="images/twistedgun.png" align="right"/>
+    <p>All proceeds will go to the Las Vegas Victim's Fund. The money you donate will help pay for the medical bills of the 
+    victims of the devastating Las Vegas Shooting that happened on October 1, 2017. View more information at 
+    <a href="https://lasvegasvictimsfund.org/">lasvegasvictimsfund.org</a>. Thank you for your contribution.</p>
+    <figure class="midSizeRight">
+        <img alt="bent gun barrel" class="roundedCornersSmall" src="images/twistedgun.png"/>
+        <figcaption>Art by Tim Bird, edited by Mary Woolley</figcaption>
     </figure>
     <form action="<?php print $phpSelf ?>"
           method="post"
-          id="donate_form">
+          id="donate_form"
+          class='<?php if($validDonation){ print'valid'; } ?>'>
         
         <fieldset class="billingInfo">
             <legend>Billing Information</legend>
             
             <p>First Name:
-                <input type="text" name="myFirstName" placeholder="First Name">
+                <input type="text" <?php if($firstNameERROR){ print'class="error"'; } ?>
+                    name="myFirstName" placeholder="First Name" value="<?php print $myFirstName ?>">
             </p>
             
             <p>Last Name:
-                <input type="text" name="myLastName" placeholder="Last Name">
+                <input type="text" <?php if($lastNameERROR){ print'class="error"'; } ?>
+                    name="myLastName" placeholder="Last Name" value="<?php print $myLastName ?>">
             </p>
             
             <p>Email:
-                <input type="text" name="myEmail" placeholder="youremail@website.com">
+                <input type="text" <?php if($emailERROR){ print'class="error"'; } ?>
+                    name="myEmail" placeholder="youremail@website.com" value="<?php print $myEmail ?>">
             </p>
             
             <fieldset>
             <legend>Billing Address:</legend>
             <p>Street:
-                <input type="text" name="myStreet" placeholder="Street Address">
+                <input type="text" <?php if($streetERROR){ print'class="error"'; } ?>
+                    name="myStreet" placeholder="Street Address" value="<?php print $myStreet ?>">
             </p>
             
             <p>City:
-                <input type="text" name="myCity" placeholder="City">
+                <input type="text" <?php if($cityERROR){ print'class="error"'; } ?>
+                    name="myCity" placeholder="City" value="<?php print $myCity ?>">
             </p>
             <p>State:
-                <select name="myState">
-                    <option value="-"> - </option>
-                    <option value="AL">AL</option>
-                    <option value="AK">AK</option>
-                    <option value="AZ">AZ</option>
-                    <option value="AR">AR</option>
-                    <option value="CA">CA</option>
-                    <option value="CO">CO</option>
-                    <option value="CT">CT</option>
-                    <option value="DE">DE</option>
-                    <option value="FL">FL</option>
-                    <option value="GA">GA</option>
-                    <option value="HI">HI</option>
-                    <option value="ID">ID</option>
-                    <option value="IL">IL</option>
-                    <option value="IN">IN</option>
-                    <option value="IA">IA</option>
-                    <option value="KS">KS</option>
-                    <option value="KY">KY</option>
-                    <option value="LA">LA</option>
-                    <option value="ME">ME</option>
-                    <option value="MD">MD</option>
-                    <option value="MA">MA</option>
-                    <option value="MI">MI</option>
-                    <option value="MN">MN</option>
-                    <option value="MS">MS</option>
-                    <option value="MO">MO</option>
-                    <option value="MT">MT</option>
-                    <option value="NE">NE</option>
-                    <option value="NV">NV</option>
-                    <option value="NH">NH</option>
-                    <option value="NJ">NJ</option>
-                    <option value="NM">NM</option>
-                    <option value="NY">NY</option>
-                    <option value="NC">NC</option>
-                    <option value="ND">ND</option>
-                    <option value="OH">OH</option>
-                    <option value="OK">OK</option>
-                    <option value="OR">OR</option>
-                    <option value="PA">PA</option>
-                    <option value="RI">RI</option>
-                    <option value="SC">SC</option>
-                    <option value="SD">SD</option>
-                    <option value="TN">TN</option>
-                    <option value="TX">TX</option>
-                    <option value="UT">UT</option>
-                    <option value="VT">VT</option>
-                    <option value="VA">VA</option>
-                    <option value="WA">WA</option>
-                    <option value="WV">WV</option>
-                    <option value="WI">WI</option>
-                    <option value="WY">WY</option>
+                <select name="myState" <?php if($stateERROR){ print'class="error"'; } ?> >
+                    <option value="-" <?php if($myState == "-") print ' selected '; ?> > - </option>
+                    <option value="AL" <?php if($myState == "AL") print ' selected '; ?> >AL</option>
+                    <option value="AK" <?php if($myState == "AK") print ' selected '; ?> >AK</option>
+                    <option value="AZ" <?php if($myState == "AZ") print ' selected '; ?> >AZ</option>
+                    <option value="AR" <?php if($myState == "AR") print ' selected '; ?> >AR</option>
+                    <option value="CA" <?php if($myState == "CA") print ' selected '; ?> >CA</option>
+                    <option value="CO" <?php if($myState == "CO") print ' selected '; ?> >CO</option>
+                    <option value="CT" <?php if($myState == "CT") print ' selected '; ?> >CT</option>
+                    <option value="DE" <?php if($myState == "DE") print ' selected '; ?> >DE</option>
+                    <option value="FL" <?php if($myState == "FL") print ' selected '; ?> >FL</option>
+                    <option value="GA" <?php if($myState == "GA") print ' selected '; ?> >GA</option>
+                    <option value="HI" <?php if($myState == "HI") print ' selected '; ?> >HI</option>
+                    <option value="ID" <?php if($myState == "ID") print ' selected '; ?> >ID</option>
+                    <option value="IL" <?php if($myState == "IL") print ' selected '; ?> >IL</option>
+                    <option value="IN" <?php if($myState == "IN") print ' selected '; ?> >IN</option>
+                    <option value="IA" <?php if($myState == "IA") print ' selected '; ?> >IA</option>
+                    <option value="KS" <?php if($myState == "KS") print ' selected '; ?> >KS</option>
+                    <option value="KY" <?php if($myState == "KY") print ' selected '; ?> >KY</option>
+                    <option value="LA" <?php if($myState == "LA") print ' selected '; ?> >LA</option>
+                    <option value="ME" <?php if($myState == "ME") print ' selected '; ?> >ME</option>
+                    <option value="MD" <?php if($myState == "MD") print ' selected '; ?> >MD</option>
+                    <option value="MA" <?php if($myState == "MA") print ' selected '; ?> >MA</option>
+                    <option value="MI" <?php if($myState == "MI") print ' selected '; ?> >MI</option>
+                    <option value="MN" <?php if($myState == "MN") print ' selected '; ?> >MN</option>
+                    <option value="MS" <?php if($myState == "MS") print ' selected '; ?> >MS</option>
+                    <option value="MO" <?php if($myState == "MO") print ' selected '; ?> >MO</option>
+                    <option value="MT" <?php if($myState == "MT") print ' selected '; ?> >MT</option>
+                    <option value="NE" <?php if($myState == "NE") print ' selected '; ?> >NE</option>
+                    <option value="NV" <?php if($myState == "NV") print ' selected '; ?> >NV</option>
+                    <option value="NH" <?php if($myState == "NH") print ' selected '; ?> >NH</option>
+                    <option value="NJ" <?php if($myState == "NJ") print ' selected '; ?> >NJ</option>
+                    <option value="NM" <?php if($myState == "NM") print ' selected '; ?> >NM</option>
+                    <option value="NY" <?php if($myState == "NY") print ' selected '; ?> >NY</option>
+                    <option value="NC" <?php if($myState == "NC") print ' selected '; ?> >NC</option>
+                    <option value="ND" <?php if($myState == "ND") print ' selected '; ?> >ND</option>
+                    <option value="OH" <?php if($myState == "0H") print ' selected '; ?> >OH</option>
+                    <option value="OK" <?php if($myState == "OK") print ' selected '; ?> >OK</option>
+                    <option value="OR" <?php if($myState == "OR") print ' selected '; ?> >OR</option>
+                    <option value="PA" <?php if($myState == "PA") print ' selected '; ?> >PA</option>
+                    <option value="RI" <?php if($myState == "RI") print ' selected '; ?> >RI</option>
+                    <option value="SC" <?php if($myState == "SC") print ' selected '; ?> >SC</option>
+                    <option value="SD" <?php if($myState == "SD") print ' selected '; ?> >SD</option>
+                    <option value="TN" <?php if($myState == "TN") print ' selected '; ?> >TN</option>
+                    <option value="TX" <?php if($myState == "TX") print ' selected '; ?> >TX</option>
+                    <option value="UT" <?php if($myState == "UT") print ' selected '; ?> >UT</option>
+                    <option value="VT" <?php if($myState == "VT") print ' selected '; ?> >VT</option>
+                    <option value="VA" <?php if($myState == "VA") print ' selected '; ?> >VA</option>
+                    <option value="WA" <?php if($myState == "WA") print ' selected '; ?> >WA</option>
+                    <option value="WV" <?php if($myState == "WV") print ' selected '; ?> >WV</option>
+                    <option value="WI" <?php if($myState == "WI") print ' selected '; ?> >WI</option>
+                    <option value="WY" <?php if($myState == "WY") print ' selected '; ?> >WY</option>
                 </select>
             </p>
             
             <p>ZIP Code:
-                <input type="text" name="myPostalCode" placeholder="ZIP Code">
+                <input type="text" <?php if($postalCodeERROR){ print'class="error"'; } ?>
+                    name="myPostalCode" placeholder="ZIP Code" value="<?php print $myPostalCode ?>">
             </p>
             
             </fieldset>
@@ -346,74 +383,80 @@ if(isset($_POST["btnSubmit"])){
             <legend>Payment Information</legend>
             
             <p>Amount:
-                <label class="radio-field">
-                    <input type="radio" name="myAmount" value="25.00" >
+                <label class="radio-field <?php if($amountERROR){ print'error'; } ?>">
+                    <input type="radio" name="myAmount" value="25.00"
+                        <?php if ($myAmount == "25.00") echo ' checked="checked" '; ?> >
                     $25.00</label>
-                <label class="radio-field">
-                    <input type="radio" name="myAmount" value="50.00" >
+                <label class="radio-field <?php if($amountERROR){ print'error'; } ?>">
+                    <input type="radio" name="myAmount" value="50.00"
+                           <?php if ($myAmount == "50.00") echo ' checked="checked" '; ?> >
                     $50.00</label>
-                <label class="radio-field">
-                    <input type="radio" name="myAmount" value="100.00" >
+                <label class="radio-field <?php if($amountERROR){ print'error'; } ?>"
+                       <?php if ($myAmount == "100.00") echo ' checked="checked" '; ?> >
+                    <input type="radio" name="myAmount" value="100.00">
                     $100.00</label>
-                <label class="radio-field">
-                    <input type="radio" name="myAmount" value="500.00" >
+                <label class="radio-field <?php if($amountERROR){ print'error'; } ?>">
+                    <input type="radio" name="myAmount" value="500.00"
+                           <?php if ($myAmount == "500.00") echo ' checked="checked" '; ?> >
                     $500.00</label>
-                <label class="radio-field">
-                    <input type="radio" name="myAmount" value="1000.00" >
+                <label class="radio-field <?php if($amountERROR){ print'error'; } ?>">
+                    <input type="radio" name="myAmount" value="1000.00"
+                           <?php if ($myAmount == "25.00") echo ' checked="checked" '; ?> >
                     $1,000.00</label>
-                <input type="radio" name="myAmount" value="" >
-                    <input type="text" name="myAmount" placeholder="$XXX.XX">
             </p>
             
             <p>Card Number:
-                <input type="text" name="myCardNum" maxlength="4" placeholder="XXXX-XXXX-XXXX-XXXX">
+                <input type="text" class="<?php if($cardNumERROR){ print'error'; } ?>"
+                    name="myCardNum" title="DO NOT ENTER REAL CARD NUMBER" maxlength="4" placeholder="XXXX-XXXX-XXXX-XXXX"
+                    value="<?php print $myCardNum ?>" >
             </p>
             
             <p>Expiration Date:
-                <select name="myMonth">
-                    <option value="-"> - </option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
+                <select <?php if($monthERROR){ print'class="error"'; } ?> name="myMonth">
+                    <option value="-" <?php if($myMonth == "-") print ' selected '; ?> > - </option>
+                    <option value="01" <?php if($myMonth == "01") print ' selected '; ?> >01</option>
+                    <option value="02" <?php if($myMonth == "02") print ' selected '; ?> >02</option>
+                    <option value="03" <?php if($myMonth == "03") print ' selected '; ?> >03</option>
+                    <option value="04" <?php if($myMonth == "04") print ' selected '; ?> >04</option>
+                    <option value="05" <?php if($myMonth == "05") print ' selected '; ?> >05</option>
+                    <option value="06" <?php if($myMonth == "06") print ' selected '; ?> >06</option>
+                    <option value="07" <?php if($myMonth == "07") print ' selected '; ?> >07</option>
+                    <option value="08" <?php if($myMonth == "08") print ' selected '; ?> >08</option>
+                    <option value="09" <?php if($myMonth == "09") print ' selected '; ?> >09</option>
+                    <option value="10" <?php if($myMonth == "10") print ' selected '; ?> >10</option>
+                    <option value="11" <?php if($myMonth == "11") print ' selected '; ?> >11</option>
+                    <option value="12" <?php if($myMonth == "12") print ' selected '; ?> >12</option>
                 </select>
-                <select name="myYear">
-                    <option value="-"> - </option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
+                <select <?php if($yearERROR){ print'class="error"'; } ?> name="myYear">
+                    <option value="-" <?php if($myYear == "-") print ' selected '; ?> > - </option>
+                    <option value="2017" <?php if($myYear == "2017") print ' selected '; ?> >2017</option>
+                    <option value="2018" <?php if($myYear == "2018") print ' selected '; ?> >2018</option>
+                    <option value="2019" <?php if($myYear == "2019") print ' selected '; ?> >2019</option>
+                    <option value="2020" <?php if($myYear == "2020") print ' selected '; ?> >2020</option>
+                    <option value="2021" <?php if($myYear == "2021") print ' selected '; ?> >2021</option>
+                    <option value="2022" <?php if($myYear == "2022") print ' selected '; ?> >2022</option>
+                    <option value="2023" <?php if($myYear == "2023") print ' selected '; ?> >2023</option>
+                    <option value="2024" <?php if($myYear == "2024") print ' selected '; ?> >2024</option>
+                    <option value="2025" <?php if($myYear == "2025") print ' selected '; ?> >2025</option>
+                    <option value="2026" <?php if($myYear == "2026") print ' selected '; ?> >2026</option>
                 </select>
             </p>
             
             <p>CVV Number:
-                <input type="text" name="myCvvNum" maxlength="1" placeholder="XXX">
+                <input type="text" class="sensitive <?php if($cvvERROR){ print'error'; } ?>"
+                    name="myCvvNum" title="DO NOT ENTER REAL CVV NUMBER" maxlength="1" placeholder="XXX"
+                    value="<?php print $myCvvNum ?>" >
             </p>
-            
-            </fieldset>
-            
-             <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="donate" >
-     </form>
-     <div class="references"><h2>References</h2>
+    
+        </fieldset>
+        
+        <input class="button" id="btnSubmit" name="btnSubmit" tabindex="900" type="submit" value="Donate" >
+    </form>
+    <div class="references"><h2>References</h2>
         <p>http://saimg-a.akamaihd.net/saatchi/399622/art/1648665/843948-7.jpg</p>
     </div>
-</article>
+</article>   
 
 <?php
-include 'footer.php';
+include'footer.php';
 ?>
-
