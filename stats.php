@@ -60,15 +60,15 @@ include 'top.php';
     <h1><img alt="" src="images/gunwflowers.png" class="midSizeRight statsImg" />Statistics</h1>
     <p>The list of children's and teenagers' deaths include all deaths by firearm, including accidental deaths, deaths in mass shootings, and suicides. A quick insight into how many people died each year for the last four years in mass shootings.</p>
 
-<ul>
+
     <?php
-    print '<li>';
+    print '<p>';
     print '<a href="gun_details.php?stat=children_killed">Children Killed</a>';
-    print '</li>';
-    print '<li>';
+    print '</p>';
+    print '<p>';
     print '<a href="gun_details.php?stat=teens_killed">Teenagers Killed</a>';
-    print '</li>';
-    print '<li>Mass Shootings</li><ul>';
+    print '</p>';
+    print '<p>Mass Shootings</p><ul>';
     print '<li>';
     print '<a href="gun_details.php?stat=mass_shootings_2017">2017</a>';
     print '</li>';
@@ -80,9 +80,9 @@ include 'top.php';
     print '</li>';
     print '<li>';
     print '<a href="gun_details.php?stat=mass_shootings_2014">2014</a>';
-    print '</li>';
+    print '</li></ul>';
     ?>
-</ul>
+
     <div class='references'><h2>References</h2>
     <p>“Gun Violence Archive.” Gun Violence Archive, 2017, www.gunviolencearchive.org/.</p>
     <p>http://popculturephilosopher.com/wp-content/uploads/2016/07/www.pinterest.com_.jpeg</p>
